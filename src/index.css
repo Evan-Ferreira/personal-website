@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Gelion-Regular';
+    src: local('Gelion-Regular'),
+        url('./assets/fonts/Gelion-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gelion-Black';
+    src: local('Gelion-Black'),
+        url('./assets/fonts/Gelion-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gelion-SemiBold';
+    src: local('Gelion-SemiBold'),
+        url('./assets/fonts/Gelion-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gelion-Bold';
+    src: local('Gelion-Bold'),
+        url('./assets/fonts/Gelion-Bold.ttf') format('truetype');
+}
