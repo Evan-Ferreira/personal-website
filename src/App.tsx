@@ -1,10 +1,12 @@
 import React from 'react';
-import MainHome from './home/MainHome';
+import Landing from './Landing';
+import Home from './Home';
 
 function App() {
     return (
         <>
-            <MainHome></MainHome>
+            <Landing></Landing>
+            <Home></Home>
         </>
     );
 }

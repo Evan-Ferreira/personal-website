@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MainHome = () => {
+const Landing = () => {
     return (
         <div className="flex flex-col justify-evenly items-center w-screen h-screen bg-yellow-400 -space-y-20">
             <div className="flex flex-col justify-center items-center">
@@ -13,14 +13,13 @@ const MainHome = () => {
             </div>
             <img
                 className="h-10 w-10 animate-bounce ease-in"
-                src="blue_arrow.png"
+                src="blue_2_arrow_down.png"
                 alt="Blue Arrow"
             />
             <div
-                className="hover:duration-75 hover:animate-none hover:bg-blue-600 hover:text-gray-200 
-                animate-pulse duration-75
-            shadow-lg shadow-zinc-500 rounded-full flex justify-center items-center h-14 text-3xl bg-yellow-200 
-            bg-yellow-200 text-blue-950 font-GelionBold w-2/12 text-center"
+                className="hover:duration-75 hover:animate-none hover:bg-blue-600 hover:text-gray-200 hover:cursor-pointer
+                animate-pulse duration-75 shadow-lg shadow-zinc-500 rounded-full flex justify-center 
+                items-center h-14 text-3xl bg-yellow-200 text-blue-950 font-GelionBold w-2/12 text-center"
             >
                 Start Here
             </div>
@@ -28,4 +27,4 @@ const MainHome = () => {
     );
 };
 
-export default MainHome;
+export default Landing;

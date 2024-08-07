@@ -25,3 +25,21 @@
     src: local('Gelion-Bold'),
         url('./assets/fonts/Gelion-Bold.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Source-Serif4-LightItalic';
+    src: local('Source-Serif4-LightItalic'),
+        url('./assets/fonts/SourceSerif4-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source-Serif4-ExtraLight';
+    src: local('Source-Serif4-ExtraLight'),
+        url('./assets/fonts/SourceSerif4-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source-Serif4-BoldItalic';
+    src: local('Source-Serif4-BoldItalic'),
+        url('./assets/fonts/SourceSerif4-BoldItalic.ttf') format('truetype');
+}

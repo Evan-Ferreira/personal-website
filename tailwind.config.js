@@ -7,10 +7,16 @@ export default {
                 GelionRegular: ['Gelion-Regular'],
                 GelionBlack: ['Gelion-Black'],
                 GelionBold: ['Gelion-SemiBold'],
+                SourceSerif4LightItalic: ['Source-Serif4-LightItalic'],
+                SourceSerif4ExtraLight: ['Source-Serif4-ExtraLight'],
+                SourceSerif4Regular: ['Source-Serif4-BoldItalic'],
             },
             fontSize: {
                 '10xl': '10rem',
                 '11xl': '16rem',
+            },
+            width: {
+                200: '200%',
             },
         },
     },
