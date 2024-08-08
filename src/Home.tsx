@@ -14,9 +14,9 @@ const Home = () => {
                 <ExploreProjects></ExploreProjects>
             </div>
             <div className="flex flex-row justify-center items-center">
-                <div className="bg-gray-100 rounded-lg border-8 border-gray-100 w-9/12">
+                <div className="inline-block bg-gray-100 rounded-lg border-8 border-gray-100 w-9/12">
                     <img
-                        className="rounded-lg"
+                        className="rounded-lg block"
                         src="cropped_headshot.jpeg"
                         alt="Headshot"
                     />
