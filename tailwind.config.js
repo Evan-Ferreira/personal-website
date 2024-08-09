@@ -8,6 +8,7 @@ export default {
                 GelionBlack: ['Gelion-Black'],
                 GelionBold: ['Gelion-SemiBold'],
                 SourceSerif4LightItalic: ['Source-Serif4-LightItalic'],
+                SourceSerif4Light: ['Source-Serif4-Light'],
                 SourceSerif4ExtraLight: ['Source-Serif4-ExtraLight'],
                 SourceSerif4Regular: ['Source-Serif4-BoldItalic'],
             },

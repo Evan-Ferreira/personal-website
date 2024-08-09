@@ -43,3 +43,9 @@
     src: local('Source-Serif4-BoldItalic'),
         url('./assets/fonts/SourceSerif4-BoldItalic.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'SourceSerif4-Light';
+    src: local('SourceSerif4-Light'),
+        url('./assets/fonts/SourceSerif4-Light.ttf') format('truetype');
+}

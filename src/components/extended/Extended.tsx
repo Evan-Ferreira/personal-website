@@ -1,6 +1,6 @@
 import React from 'react';
-import Portrait from './components/extended/Portrait';
-import LearnMore from './components/extended/LearnMore';
+import Portrait from './Portrait';
+import LearnMore from './LearnMore';
 
 const Extended = () => {
     return (
