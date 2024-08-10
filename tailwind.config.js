@@ -19,6 +19,12 @@ export default {
             width: {
                 200: '200%',
             },
+            borderWidth: {
+                6: '6px',
+            },
+            Spacing: {
+                1.5: '0.375rem',
+            },
         },
     },
     plugins: [],

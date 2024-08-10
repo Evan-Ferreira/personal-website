@@ -3,7 +3,8 @@ import React from 'react';
 const Portrait = () => {
     return (
         <a
-            className="flex flex-col w-6/12 justify-center items-center font-SourceSerif4ExtraLight space-y-2 hover:opacity-70"
+            className="flex flex-col w-6/12 justify-center items-center font-SourceSerif4ExtraLight space-y-2 
+            hover:scale-105 hover:opacity-70 transition ease-in-out duration-300"
             href="https://www.queensu.ca/gazette/stories/students-recognized-city-kingston-impactful-innovations"
         >
             <div className="flex flex-row justify-end bg-gray-100 overflow-hidden rounded-lg border-8 border-gray-100 w-8/12">
