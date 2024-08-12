@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import wrestling_team from '../../assets/images/passions/wrestling_team.png';
 
 const Wrestling = () => {
     const [hover, setHover] = useState(false);
@@ -16,7 +17,7 @@ const Wrestling = () => {
                 className={`${
                     hover ? 'opacity-30' : ' opacity-100'
                 } transition-opacity ease-in-out duration-300`}
-                src="wrestling_team.png"
+                src={wrestling_team}
                 alt="Wrestling Team"
             />
             <p

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import blue_2_arrow_down from '../../assets/images/landing/blue_2_arrow_down.png';
 
 const Landing = () => {
     const navigate = useNavigate();
@@ -35,7 +36,7 @@ const Landing = () => {
                 </div>
                 <img
                     className="h-10 w-10 animate-bounce ease-in"
-                    src="blue_2_arrow_down.png"
+                    src={blue_2_arrow_down}
                     alt="Blue Arrow"
                 />
                 <div

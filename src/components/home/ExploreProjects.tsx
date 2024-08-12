@@ -1,5 +1,6 @@
 import { PageContext } from '../../App';
 import { useContext } from 'react';
+import blue_right_arrow from '../../assets/images/home/blue_right_arrow.png';
 
 const ExploreProjects = () => {
     const context = useContext(PageContext);
@@ -15,7 +16,7 @@ const ExploreProjects = () => {
             <p className="font-SourceSerif4ExtraLight text-3xl">
                 Explore my Projects
             </p>
-            <img className="w-6" src="blue_right_arrow.png" alt="Blue Arrow" />
+            <img className="w-6" src={blue_right_arrow} alt="Blue Arrow" />
         </div>
     );
 };

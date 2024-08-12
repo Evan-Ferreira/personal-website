@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import mayor_win from '../../assets/images/extended/mayor_win.jpg';
 
 const Portrait = () => {
     const [hover, setHover] = useState(false);
@@ -17,7 +18,7 @@ const Portrait = () => {
             <div className="flex flex-row justify-end bg-gray-100 overflow-hidden rounded-lg border-8 border-gray-100 w-8/12">
                 <img
                     className="inline-block rounded-lg w-full"
-                    src="mayor_win.jpg"
+                    src={mayor_win}
                     alt="Mayor's Innovation Challenge Win"
                 />
             </div>

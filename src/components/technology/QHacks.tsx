@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import qhacks from '../../assets/images/technology/qhacks.png';
 
 const QHacks = () => {
     const [hover, setHover] = useState(false);
@@ -16,7 +17,7 @@ const QHacks = () => {
                 className={`${
                     hover ? 'opacity-30' : ' opacity-100'
                 } transition-opacity ease-in-out duration-300`}
-                src="qhacks.png"
+                src={qhacks}
                 alt="QHacks"
             />
             <p

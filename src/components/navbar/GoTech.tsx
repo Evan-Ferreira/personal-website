@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { PageContext } from '../../App';
 import { motion } from 'framer-motion';
+import navbar_technology from '../../assets/images/navbar/navbar_technology.png';
 
 const GoTech = () => {
     const context = useContext(PageContext);
@@ -21,7 +22,7 @@ const GoTech = () => {
             className="flex flex-row justify-center items-center rounded-full col-start-2 row-start-3 
     hover:scale-105 hover:cursor-pointer w-14 h-14 bg-sky-400 border-4 border-gray-900 transition ease-in-out duration-300"
         >
-            <img className="w-6" src="navbar-technology.png" alt="Technology" />
+            <img className="w-6" src={navbar_technology} alt="Technology" />
         </motion.div>
     );
 };

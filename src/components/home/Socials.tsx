@@ -1,3 +1,7 @@
+import linkedin from '../../assets/images/home/linkedin.png';
+import github from '../../assets/images/home/github.png';
+import coffee from '../../assets/images/home/coffee.png';
+
 const Socials = () => {
     return (
         <div className="flex flex-row justify-start items-center space-x-8 h-40">
@@ -12,19 +16,19 @@ const Socials = () => {
                 className="hover:scale-110 transition ease-in-out duration-200"
                 href="https://www.linkedin.com/in/evan-ferreira/"
             >
-                <img className="w-14" src="linkedin.png" alt="LinkedIn" />
+                <img className="w-14" src={linkedin} alt="LinkedIn" />
             </a>
             <a
                 className="hover:scale-110 transition ease-in-out duration-200"
                 href="https://github.com/Evan-Ferreira"
             >
-                <img className="w-14" src="github.png" alt="GitHub" />
+                <img className="w-14" src={github} alt="GitHub" />
             </a>
             <a
                 className="hover:scale-110 transition ease-in-out duration-200"
                 href="https://calendly.com/evanjfer/coffee-w-evan"
             >
-                <img className="w-14" src="coffee.png" alt="Coffee" />
+                <img className="w-14" src={coffee} alt="Coffee" />
             </a>
         </div>
     );

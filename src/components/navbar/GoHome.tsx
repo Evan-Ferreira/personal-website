@@ -1,5 +1,6 @@
 import { PageContext } from '../../App';
 import { useContext } from 'react';
+import navbar_person from '../../assets/images/navbar/navbar_person.png';
 
 const GoHome = () => {
     const context = useContext(PageContext);
@@ -15,7 +16,7 @@ const GoHome = () => {
         >
             <img
                 className="absolute -bottom-1.5"
-                src="navbar-person.png"
+                src={navbar_person}
                 alt="Home"
             />
         </div>

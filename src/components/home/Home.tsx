@@ -6,6 +6,7 @@ import ExploreProjects from './ExploreProjects';
 import Extended from '../extended/Extended';
 import { PageContext } from '../../App';
 import { useContext, useState } from 'react';
+import cropped_headshot from '../../assets/images/home/cropped_headshot.jpeg';
 
 const Home = () => {
     const context = useContext(PageContext);
@@ -82,7 +83,7 @@ const Home = () => {
                                 onMouseEnter={() => setHover(true)}
                                 onMouseLeave={() => setHover(false)}
                                 className="rounded-lg block"
-                                src="cropped_headshot.jpeg"
+                                src={cropped_headshot}
                                 alt="Headshot"
                             />
                         </div>

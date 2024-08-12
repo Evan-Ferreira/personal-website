@@ -3,6 +3,8 @@ import GoHome from './GoHome';
 import GoPassions from './GoPassions';
 import GoTech from './GoTech';
 import { motion } from 'framer-motion';
+import navbar_person from '../../assets/images/navbar/navbar_person.png';
+import navbar_close from '../../assets/images/navbar/navbar_close.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +20,7 @@ const Navbar = () => {
                     <div className="relative rounded-full h-14 w-14 bg-amber-300 border-4 border-gray-900">
                         <img
                             className="-bottom-1.5 absolute"
-                            src="navbar-person.png"
+                            src={navbar_person}
                             alt="Home"
                         />
                     </div>
@@ -37,7 +39,7 @@ const Navbar = () => {
                         onClick={() => setIsOpen(false)}
                         className="rounded-full col-start-1 row-start-1 w-14 hover:scale-105 hover:cursor-pointer transition ease-in-out duration-300"
                     >
-                        <img className="" src="navbar-close.png" alt="Close" />
+                        <img className="" src={navbar_close} alt="Close" />
                     </motion.div>
                     <GoHome />
                     <GoPassions />

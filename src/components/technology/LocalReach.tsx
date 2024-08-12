@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import local_reach from '../../assets/images/passions/local_reach.png';
 
 const LocalReach = () => {
     const [hover, setHover] = useState(false);
@@ -16,7 +17,7 @@ const LocalReach = () => {
                 className={`${
                     hover ? 'opacity-30' : ' opacity-100'
                 } transition-opacity ease-in-out duration-300`}
-                src="local_reach.png"
+                src={local_reach}
                 alt="Local Reach"
             />
             <p

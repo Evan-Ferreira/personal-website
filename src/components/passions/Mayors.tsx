@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import mayor_win_bubble from '../../assets/images/passions/mayor_win_bubble.png';
 
 const Mayors = () => {
     const [hover, setHover] = useState(false);
@@ -16,7 +17,7 @@ const Mayors = () => {
                 className={`${
                     hover ? 'opacity-30' : ' opacity-100'
                 } transition-opacity ease-in-out duration-300`}
-                src="mayor_win_bubble.png"
+                src={mayor_win_bubble}
                 alt="Mayor's Innovation Challenge"
             />
             <p
