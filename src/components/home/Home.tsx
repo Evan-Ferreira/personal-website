@@ -47,7 +47,7 @@ const Home = () => {
                             : '0',
                 }}
                 transition={{
-                    opacity: { duration: 3, ease: 'easeInOut' },
+                    opacity: { duration: 2, ease: 'easeInOut' },
                     x: { duration: 1, ease: 'easeInOut' },
                 }}
             >
@@ -68,8 +68,6 @@ const Home = () => {
                     </div>
                     <a
                         href="https://www.linkedin.com/in/evan-ferreira/"
-                        onMouseEnter={() => setHover(true)}
-                        onMouseLeave={() => setHover(false)}
                         className={`flex flex-row justify-center items-center ${
                             hover ? 'scale-105' : 'scale-100'
                         } ${
@@ -81,6 +79,8 @@ const Home = () => {
                         "
                         >
                             <img
+                                onMouseEnter={() => setHover(true)}
+                                onMouseLeave={() => setHover(false)}
                                 className="rounded-lg block"
                                 src="cropped_headshot.jpeg"
                                 alt="Headshot"

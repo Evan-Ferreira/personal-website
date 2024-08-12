@@ -10,13 +10,22 @@ const Socials = () => {
             >
                 Resume
             </div>
-            <a href="https://www.linkedin.com/in/evan-ferreira/">
+            <a
+                className="hover:scale-110 transition ease-in-out duration-200"
+                href="https://www.linkedin.com/in/evan-ferreira/"
+            >
                 <img className="w-14" src="linkedin.png" alt="LinkedIn" />
             </a>
-            <a href="https://github.com/Evan-Ferreira">
+            <a
+                className="hover:scale-110 transition ease-in-out duration-200"
+                href="https://github.com/Evan-Ferreira"
+            >
                 <img className="w-14" src="github.png" alt="GitHub" />
             </a>
-            <a href="https://calendly.com/evanjfer/coffee-w-evan">
+            <a
+                className="hover:scale-110 transition ease-in-out duration-200"
+                href="https://calendly.com/evanjfer/coffee-w-evan"
+            >
                 <img className="w-14" src="coffee.png" alt="Coffee" />
             </a>
         </div>

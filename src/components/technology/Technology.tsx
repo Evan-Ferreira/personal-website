@@ -31,7 +31,7 @@ const Technology = () => {
                     x: page === '/technology' ? '0' : '100vw',
                 }}
                 transition={{
-                    opacity: { duration: 3, ease: 'easeInOut' },
+                    opacity: { duration: 2, ease: 'easeInOut' },
                     x: { duration: 1, ease: 'easeInOut' },
                 }}
                 className={`${

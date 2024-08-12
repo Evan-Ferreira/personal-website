@@ -42,7 +42,7 @@ const Extended = () => {
                             : '0',
                 }}
                 transition={{
-                    opacity: { duration: 3, ease: 'easeInOut' },
+                    opacity: { duration: 2, ease: 'easeInOut' },
                     x: { duration: 1, ease: 'easeInOut' },
                 }}
                 className={`flex flex-row w-screen h-screen ${
