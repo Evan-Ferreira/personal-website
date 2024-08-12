@@ -6,6 +6,7 @@ import Navbar from './components/navbar/Navbar';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useState, useEffect, createContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface PageContextType {
     page: string;
@@ -19,7 +20,11 @@ export const PageContext = createContext<PageContextType | undefined>(
 const App = () => {
     const location = useLocation();
     const showNavbar = location.pathname !== '/';
-    const [page, setPage] = useState('/home');
+    const [page, setPage] = useState('/');
+    const navigate = useNavigate();
+    useEffect(() => {
+        navigate(page);
+    }, [page]);
     return (
         <>
             <PageContext.Provider value={{ page, setPage }}>

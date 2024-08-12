@@ -3,15 +3,6 @@ import GoHome from './GoHome';
 import GoPassions from './GoPassions';
 import GoTech from './GoTech';
 
-interface PageContextType {
-    page: string;
-    setPage: (page: string) => void;
-}
-
-export const PageContext = createContext<PageContextType | undefined>(
-    undefined
-);
-
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 

@@ -1,10 +1,15 @@
-import { useNavigate } from 'react-router-dom';
+import { PageContext } from '../../App';
+import { useContext } from 'react';
 
 const GoHome = () => {
-    const navigate = useNavigate();
+    const context = useContext(PageContext);
+    if (!context) {
+        throw new Error('Context is not available');
+    }
+    const { page, setPage } = context;
     return (
         <div
-            onClick={() => navigate('/home')}
+            onClick={() => setPage('/home')}
             className="relative rounded-full col-start-2 row-start-1 w-14 bg-amber-300 border-4 border-gray-900 
     hover:scale-105 hover:cursor-pointer transition ease-in-out duration-300"
         >

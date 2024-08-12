@@ -1,7 +1,3 @@
-import { useNavigate } from 'react-router-dom';
-import { PageContext } from '../navbar/Navbar';
-import { useContext, useEffect } from 'react';
-
 const ExploreProjects = () => {
     return (
         <div className="flex flex-row justify-start items-center space-x-4 mt-10 animate-pulse hover:animate-none hover:cursor-pointer">

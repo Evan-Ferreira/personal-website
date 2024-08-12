@@ -1,6 +1,5 @@
-import { PageContext } from './Navbar';
-import { useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { PageContext } from '../../App';
 
 const GoTech = () => {
     const context = useContext(PageContext);
@@ -8,11 +7,6 @@ const GoTech = () => {
         throw new Error('Context is not available');
     }
     const { page, setPage } = context;
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        navigate(page);
-    }, [page]);
     return (
         <div
             onClick={() => setPage('/technology')}

@@ -1,8 +1,5 @@
 import Portrait from './Portrait';
 import LearnMore from './LearnMore';
-import { PageContext } from '../navbar/Navbar';
-import { useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const Extended = () => {
     return (
