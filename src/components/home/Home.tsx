@@ -5,7 +5,7 @@ import PersonalDescription from './PersonalDescription';
 import ExploreProjects from './ExploreProjects';
 import Extended from '../extended/Extended';
 import { PageContext } from '../../App';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 const Home = () => {
     const context = useContext(PageContext);
@@ -13,6 +13,7 @@ const Home = () => {
         throw new Error('Context is not available');
     }
     const { page, setPage } = context;
+    const [hover, setHover] = useState(false);
 
     return (
         <>
@@ -65,15 +66,27 @@ const Home = () => {
                         <PersonalDescription />
                         <ExploreProjects />
                     </div>
-                    <div className="flex flex-row justify-center items-center">
-                        <div className="inline-block bg-gray-100 rounded-lg border-8 border-gray-100 w-9/12">
+                    <a
+                        href="https://www.linkedin.com/in/evan-ferreira/"
+                        onMouseEnter={() => setHover(true)}
+                        onMouseLeave={() => setHover(false)}
+                        className={`flex flex-row justify-center items-center ${
+                            hover ? 'scale-105' : 'scale-100'
+                        } ${
+                            hover ? 'opacity-70' : 'opacity-100'
+                        } transition ease-in-out duration-300`}
+                    >
+                        <div
+                            className="inline-block bg-gray-100 rounded-lg border-8 border-gray-100 w-9/12 
+                        "
+                        >
                             <img
                                 className="rounded-lg block"
                                 src="cropped_headshot.jpeg"
                                 alt="Headshot"
                             />
                         </div>
-                    </div>
+                    </a>
                 </div>
             </motion.div>
             <Extended />
