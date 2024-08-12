@@ -1,6 +1,17 @@
+import { PageContext } from '../../App';
+import { useContext } from 'react';
+
 const ExploreProjects = () => {
+    const context = useContext(PageContext);
+    if (!context) {
+        throw new Error('Context is not available');
+    }
+    const { page, setPage } = context;
     return (
-        <div className="flex flex-row justify-start items-center space-x-4 mt-10 animate-pulse hover:animate-none hover:cursor-pointer">
+        <div
+            onClick={() => setPage('/technology')}
+            className="flex flex-row justify-start items-center space-x-4 mt-10 animate-pulse hover:animate-none hover:cursor-pointer"
+        >
             <p className="font-SourceSerif4ExtraLight text-3xl">
                 Explore my Projects
             </p>

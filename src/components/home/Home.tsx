@@ -5,7 +5,6 @@ import PersonalDescription from './PersonalDescription';
 import ExploreProjects from './ExploreProjects';
 import Extended from '../extended/Extended';
 import { PageContext } from '../../App';
-
 import { useContext } from 'react';
 
 const Home = () => {
@@ -17,7 +16,15 @@ const Home = () => {
 
     return (
         <>
-            <div className="absolute h-full w-full -z-10 bg-yellow-200"></div>
+            <div
+                className={`absolute h-full w-full -z-10 ${
+                    page === '/technology'
+                        ? 'bg-sky-400'
+                        : page === '/passions'
+                        ? 'bg-red-400'
+                        : 'bg-yellow-200'
+                }`}
+            ></div>
             <motion.div
                 initial={{ opacity: 0, x: 0 }}
                 animate={{
@@ -38,9 +45,20 @@ const Home = () => {
                             ? '100vw'
                             : '0',
                 }}
-                transition={{ duration: 1, ease: 'easeInOut' }}
+                transition={{
+                    opacity: { duration: 3, ease: 'easeInOut' },
+                    x: { duration: 1, ease: 'easeInOut' },
+                }}
             >
-                <div className="flex flex-row w-screen h-screen bg-yellow-200 relative">
+                <div
+                    className={`flex flex-row w-screen h-screen ${
+                        page === '/technology'
+                            ? 'bg-sky-400'
+                            : page === '/passions'
+                            ? 'bg-red-400'
+                            : 'bg-yellow-200'
+                    } relative`}
+                >
                     <div className="ml-10 w-7/12">
                         <Heading />
                         <Socials />
