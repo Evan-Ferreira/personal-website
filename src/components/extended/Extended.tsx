@@ -9,7 +9,7 @@ const Extended = () => {
     if (!context) {
         throw new Error('Context is not available');
     }
-    const { page, setPage } = context;
+    const { page } = context;
     return (
         <>
             <div

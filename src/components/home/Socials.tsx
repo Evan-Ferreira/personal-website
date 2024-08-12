@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Socials = () => {
     return (
         <div className="flex flex-row justify-start items-center space-x-8 h-40">

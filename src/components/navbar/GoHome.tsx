@@ -6,7 +6,7 @@ const GoHome = () => {
     if (!context) {
         throw new Error('Context is not available');
     }
-    const { page, setPage } = context;
+    const { setPage } = context;
     return (
         <div
             onClick={() => setPage('/home')}

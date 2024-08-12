@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import LocalReach from './LocalReach';
 import Mayors from './Mayors';
 import Wrestling from './Wrestling';

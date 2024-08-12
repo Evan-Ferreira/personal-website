@@ -7,7 +7,7 @@ const GoPassions = () => {
     if (!context) {
         throw new Error('Context is not available');
     }
-    const { page, setPage } = context;
+    const { setPage } = context;
 
     return (
         <motion.div

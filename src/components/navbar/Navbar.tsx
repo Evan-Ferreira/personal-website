@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from 'react';
+import { useState } from 'react';
 import GoHome from './GoHome';
 import GoPassions from './GoPassions';
 import GoTech from './GoTech';

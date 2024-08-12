@@ -12,7 +12,7 @@ const Home = () => {
     if (!context) {
         throw new Error('Context is not available');
     }
-    const { page, setPage } = context;
+    const { page } = context;
     const [hover, setHover] = useState(false);
 
     return (

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import LocalReach from './LocalReach';
 import QHacks from './QHacks';
 import HawkHacks from './HawkHacks';

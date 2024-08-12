@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const QHacks = () => {
     const [hover, setHover] = useState(false);
