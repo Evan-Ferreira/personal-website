@@ -61,7 +61,7 @@ const Home = () => {
                             : 'bg-yellow-200'
                     } relative`}
                 >
-                    <div className="md:ml-10 md:w-7/12 w-full md:mr-0 ml-5 mr-5 flex flex-col justify-center items-center md:space-y-0 space-y-4">
+                    <div className="md:ml-10 -mt-16 md:w-7/12 w-full md:mr-0 ml-5 mr-5 flex flex-col justify-center md:items-start items-center space-y-4">
                         <Heading />
                         <Socials />
                         <PersonalDescription />
@@ -76,7 +76,7 @@ const Home = () => {
                         } transition ease-in-out duration-300`}
                     >
                         <div
-                            className="inline-block bg-gray-100 rounded-lg border-8 border-gray-100 w-9/12 
+                            className="inline-block bg-gray-100 rounded-lg border-8 border-gray-100 w-7/12 
                         "
                         >
                             <img

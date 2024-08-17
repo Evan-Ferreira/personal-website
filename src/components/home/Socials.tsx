@@ -8,7 +8,7 @@ const Socials = () => {
             <div
                 className="hover:duration-75 hover:animate-none hover:bg-blue-600 hover:text-gray-200 hover:cursor-pointer
 shadow-lg shadow-zinc-500 rounded-lg flex justify-center 
-items-center h-16 text-3xl bg-yellow-400 text-gray-100 font-GelionBold xl:w-2/12 md:w-4/12 w-0 text-center hidden md:flex"
+items-center h-16 text-3xl bg-yellow-400 text-gray-100 font-GelionBold md:w-6/12 text-center hidden md:flex"
             >
                 Resume
             </div>

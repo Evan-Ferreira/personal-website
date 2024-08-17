@@ -22,7 +22,7 @@ const Portrait = () => {
                     alt="Mayor's Innovation Challenge Win"
                 />
             </div>
-            <p className="text-md italic w-8/12 hidden md:flex w-full text-center">
+            <p className="text-md italic w-8/12 hidden md:flex text-center">
                 Featured in the Queen's Gazette for Winning $5,000 from the
                 Mayor of Kingston (Click to Learn More)
             </p>
