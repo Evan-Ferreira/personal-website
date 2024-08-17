@@ -45,7 +45,7 @@ const Extended = () => {
                     opacity: { duration: 2, ease: 'easeInOut' },
                     x: { duration: 1, ease: 'easeInOut' },
                 }}
-                className={`flex flex-row w-screen h-screen ${
+                className={`flex md:flex-row flex-col w-screen h-screen md:space-y-0 space-y-10 ${
                     page === '/technology'
                         ? 'bg-sky-400'
                         : page === '/passions'
@@ -54,8 +54,8 @@ const Extended = () => {
                 } items-center justify-start relative`}
             >
                 <Portrait></Portrait>
-                <div className="flex flex-col justify-center items-start w-5/12 space-y-20">
-                    <p className="font-SourceSerif4ExtraLight text-xl">
+                <div className="flex flex-col justify-center md:items-start items-center md:w-5/12 md:space-y-20 space-y-10 md:mr-0 md:ml-0 ml-5 mr-5">
+                    <p className="font-SourceSerif4ExtraLight md:text-xl text-md">
                         Outside of my academics, I am a varsity wrestler at
                         Queen's University, previously ranked 3rd in Canada. In
                         fact, I'm passionate about almost all sports including
