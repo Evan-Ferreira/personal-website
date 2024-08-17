@@ -61,7 +61,7 @@ const Home = () => {
                             : 'bg-yellow-200'
                     } relative`}
                 >
-                    <div className="ml-10 w-7/12">
+                    <div className="md:ml-10 md:w-7/12 w-full md:mr-0 ml-5 mr-5 flex flex-col justify-center items-center">
                         <Heading />
                         <Socials />
                         <PersonalDescription />
@@ -69,7 +69,7 @@ const Home = () => {
                     </div>
                     <a
                         href="https://www.linkedin.com/in/evan-ferreira/"
-                        className={`flex flex-row justify-center items-center ${
+                        className={`hidden md:flex md:w-full w-0 flex-row justify-center items-center ${
                             hover ? 'scale-105' : 'scale-100'
                         } ${
                             hover ? 'opacity-70' : 'opacity-100'

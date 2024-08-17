@@ -1,6 +1,6 @@
 const PersonalDescription = () => {
     return (
-        <div className="space-y-4 text-lg">
+        <div className="space-y-4 md:text-lg text-md">
             <h4 className="font-SourceSerif4Regular italic bold">About Me</h4>
             <p className="font-SourceSerif4ExtraLight">
                 Hello 👋, I'm Evan Ferreira, a 3rd-year Computer Science &
