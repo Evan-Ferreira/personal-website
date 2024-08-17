@@ -42,14 +42,14 @@ const Technology = () => {
                         : 'bg-yellow-200'
                 } text-gray-100`}
             >
-                <div className="ml-10 mr-10 pt-20">
-                    <h2 className="font-GelionBlack text-gray-100 text-9xl">
+                <div className="md:ml-10 md:mr-10 pt-20 flex flex-col md:justify-start justify-center md:items-start items-center">
+                    <h2 className="font-GelionBlack text-gray-100 md:text-9xl text-5xl">
                         TECHNOLOGY
                     </h2>
-                    <h4 className="font-GelionBold text-gray-100 text-3xl">
+                    <h4 className="font-GelionBold text-gray-100 md:text-3xl text-xl">
                         /tek'nɑ:.lə.dʒi/
                     </h4>
-                    <h4 className="font-GelionRegular text-gray-100 text-3xl">
+                    <h4 className="font-GelionRegular text-gray-100 md:text-3xl text-xl text-center">
                         The practical, especially industrial, use of scientific
                         discoveries:
                     </h4>

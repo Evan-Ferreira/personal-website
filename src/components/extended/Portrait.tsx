@@ -15,7 +15,7 @@ const Portrait = () => {
             } transition ease-in-out duration-300`}
             href="https://www.queensu.ca/gazette/stories/students-recognized-city-kingston-impactful-innovations"
         >
-            <div className="flex flex-row justify-end bg-gray-100 overflow-hidden rounded-lg border-8 border-gray-100 md:w-8/12 w-10/12">
+            <div className="flex flex-row justify-end bg-gray-100 overflow-hidden rounded-lg border-8 border-gray-100 md:w-8/12">
                 <img
                     className="inline-block rounded-lg w-full"
                     src={mayor_win}

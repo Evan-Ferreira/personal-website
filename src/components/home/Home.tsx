@@ -61,7 +61,7 @@ const Home = () => {
                             : 'bg-yellow-200'
                     } relative`}
                 >
-                    <div className="md:ml-10 md:w-7/12 w-full md:mr-0 ml-5 mr-5 flex flex-col justify-center items-center">
+                    <div className="md:ml-10 md:w-7/12 w-full md:mr-0 ml-5 mr-5 flex flex-col justify-center items-center md:space-y-0 space-y-4">
                         <Heading />
                         <Socials />
                         <PersonalDescription />

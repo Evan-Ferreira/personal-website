@@ -9,7 +9,7 @@ const Wrestling = () => {
             href="https://gogaelsgo.com/sports/wrestling/roster/2022-2023"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            className={`flex flex-row justify-center items-center rounded-lg w-8/12 relative text-center ${
+            className={`flex flex-row justify-center items-center rounded-lg md:w-8/12 w-10/12 relative text-center ${
                 hover ? 'scale-105' : 'scale-100'
             } transition ease-in-out duration-300`}
         >
@@ -21,7 +21,7 @@ const Wrestling = () => {
                 alt="Wrestling Team"
             />
             <p
-                className={`absolute w-10/12 font-GelionRegular text-2xl text-gray-900 ${
+                className={`hidden md:flex absolute w-10/12 font-GelionRegular text-2xl text-gray-900 ${
                     hover ? 'opacity-100' : 'opacity-0'
                 } transition ease-in-out duration-300`}
             >

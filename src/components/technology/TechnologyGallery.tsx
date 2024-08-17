@@ -4,7 +4,7 @@ import HawkHacks from './HawkHacks';
 
 const TechnologyGallery = () => {
     return (
-        <div className="grid grid-col-1 grid-row-3 justify-items-center gap-y-6 mt-20 pb-20">
+        <div className="grid grid-col-1 grid-row-3 justify-items-center gap-y-6 md:mt-20 mt-10 pb-20">
             <LocalReach></LocalReach>
             <HawkHacks></HawkHacks>
             <QHacks></QHacks>
