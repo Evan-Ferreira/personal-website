@@ -75,14 +75,11 @@ const Home = () => {
                             hover ? 'opacity-70' : 'opacity-100'
                         } transition ease-in-out duration-300`}
                     >
-                        <div
-                            className="inline-block bg-gray-100 rounded-lg border-8 border-gray-100 w-7/12 
-                        "
-                        >
+                        <div className="bg-gray-100 rounded-lg border-8 border-gray-100 w-7/12 max-w-[500px] flex justify-center items-center">
                             <img
                                 onMouseEnter={() => setHover(true)}
                                 onMouseLeave={() => setHover(false)}
-                                className="rounded-lg block"
+                                className="rounded-lg w-full"
                                 src={cropped_headshot}
                                 alt="Headshot"
                             />
