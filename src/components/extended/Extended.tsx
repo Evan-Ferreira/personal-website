@@ -63,7 +63,7 @@ const Extended = () => {
                         Alongside my love for sports, I am enthusiastic about
                         entrepreneurship and startups, where I co-chair Canada's
                         largest undergraduate AI product incubator, and have
-                        raised $50,000+ in non-dilutive funding for my own
+                        raised $60,000+ in non-dilutive funding for my own
                         computer vision startup.
                     </p>
                     <LearnMore></LearnMore>

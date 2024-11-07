@@ -21,7 +21,7 @@ const LocalReach = () => {
                 alt="Local Reach"
             />
             <p
-                className={`absolute w-10/12 font-GelionRegular hidden md:flex text-2xl text-gray-900 ${
+                className={`absolute w-10/12 font-GelionRegular hidden md:flex text-2xl text-gray-100 ${
                     hover ? 'opacity-100' : 'opacity-0'
                 } transition ease-in-out duration-300`}
             >
