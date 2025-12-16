@@ -1,26 +1,114 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --bg-primary: #09090b;
+    --bg-secondary: #0f0f11;
+    --bg-tertiary: #18181b;
+    --fg-primary: #fafafa;
+    --fg-secondary: #d4d4d8;
+    --fg-tertiary: #71717a;
+    --accent: #f97316;
+    --accent-glow: #f9731680;
+    --border: #ffffff14;
+    --grid-lines: #ffffff06;
+    --border-accent: #f9731633;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--bg-primary);
+    --color-foreground: var(--bg-secondary);
+    --color-bg-secondary: var(--bg-secondary);
+    --color-bg-tertiary: var(--bg-tertiary);
+    --color-fg-primary: var(--fg-primary);
+    --color-fg-secondary: var(--fg-secondary);
+    --color-fg-tertiary: var(--fg-tertiary);
+    --color-accent: var(--accent);
+    --color-border: var(--border);
+    --color-border-accent: var(--border-accent);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+@layer utilities {
+    .bg-grid {
+        background-image: linear-gradient(
+                var(--grid-lines) 1px,
+                transparent 1px
+            ),
+            linear-gradient(90deg, var(--grid-lines) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+
+    .bento-card {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .bento-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        padding: 1px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            var(--accent),
+            transparent
+        );
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .bento-card:hover::before {
+        opacity: 1;
+        animation: glow-sweep 3s ease-in-out infinite;
+    }
+
+    .bento-card:hover {
+        background: var(--bg-tertiary);
+        box-shadow: 0 0 20px rgba(249, 115, 22, 0.15),
+            0 0 40px rgba(249, 115, 22, 0.05);
+        border-color: rgba(249, 115, 22, 0.2);
+    }
+
+    @keyframes glow-sweep {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -200% 0;
+        }
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+.bg-grid {
+    background-image: linear-gradient(var(--grid-lines) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-lines) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* bg-(--color-foreground) border border-(--color-border) rounded-xl p-4 relative 
+                  hover:scale-101 duration-300 ease-in-out
+                  hover:border-(--color-border-accent) hover:shadow-(--color-border-accent) hover:inset-shadow-(--color-border-accent)" */
