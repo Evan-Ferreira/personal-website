@@ -73,6 +73,7 @@
         mask-composite: exclude;
         opacity: 0;
         transition: opacity 0.3s ease;
+        pointer-events: none;
     }
 
     .bento-card:hover::before {
@@ -94,6 +95,17 @@
         100% {
             background-position: -200% 0;
         }
+    }
+
+    ul.flex li.align-middle {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    ul.flex li.align-middle > * {
+        grid-column: 2;
     }
 }
 
