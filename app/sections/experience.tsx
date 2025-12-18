@@ -42,7 +42,7 @@ const EXPERIENCES = [
             />
         ),
         date: 'JAN 2025 - AUG 2025',
-        location: 'SURREY, BC (REMOTE)',
+        location: 'REMOTE',
     },
     {
         title: 'Co-Founder',
