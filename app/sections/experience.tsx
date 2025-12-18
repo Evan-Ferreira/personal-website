@@ -5,7 +5,7 @@ import { Experience as ExperienceComponent } from '@/components/experience';
 const EXPERIENCES = [
     {
         title: 'Software Engineering Intern',
-        description: 'TBD',
+        description: 'Summer 2026',
         image: <Image width={45} height={45} src="/uber.svg" alt="Uber Logo" />,
         date: 'INCOMING SUMMER 2026',
         location: 'SAN FRANCISCO, CA',
