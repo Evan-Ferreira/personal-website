@@ -6,9 +6,9 @@ export function Header() {
             <h1 className="text-4xl font-serif italic text-fg-primary leading-none transition-all duration-300">
                 Evan Ferreira
             </h1>
-            <ul className="flex gap-6 list-disc items-center">
+            <ul className="flex gap-6 list-disc items-center marker:text-xs text-sm">
                 <li className="list-none text-center">Software Engineer</li>
-                <li className="text-center">
+                <li className="text-center pl-1">
                     <div className="inline-flex gap-2 align-middle">
                         <p>Queen's Commerce</p>
                         <Image
@@ -20,7 +20,7 @@ export function Header() {
                         ></Image>
                     </div>
                 </li>
-                <li>
+                <li className="pl-1">
                     <div className="inline-flex gap-2 align-middle">
                         <a
                             href="https://github.com/Evan-Ferreira"

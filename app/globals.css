@@ -12,6 +12,7 @@
     --border: #ffffff14;
     --grid-lines: #ffffff06;
     --border-accent: #f9731633;
+    --font-mono: 'Geist Mono', 'Geist Mono Fallback';
 }
 
 @theme inline {
@@ -25,6 +26,7 @@
     --color-accent: var(--accent);
     --color-border: var(--border);
     --color-border-accent: var(--border-accent);
+    --mono: var(--font-mono);
 }
 
 @media (prefers-color-scheme: dark) {
