@@ -13,6 +13,9 @@
     --grid-lines: #ffffff06;
     --border-accent: #f9731633;
     --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    color-scheme: dark;
 }
 
 @theme inline {
@@ -27,13 +30,6 @@
     --color-border: var(--border);
     --color-border-accent: var(--border-accent);
     --mono: var(--font-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
 }
 
 @layer utilities {

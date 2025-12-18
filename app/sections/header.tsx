@@ -1,9 +1,19 @@
 import Image from 'next/image';
+import { Instrument_Serif } from 'next/font/google';
+
+const instrumentSerif = Instrument_Serif({
+    weight: '400',
+    subsets: ['latin'],
+    style: 'italic',
+    variable: '--font-instrument-serif',
+});
 
 export function Header() {
     return (
         <header className="flex flex-col lg:w-fit w-full bento-card items-center justify-center mx-auto gap-2">
-            <h1 className="text-4xl font-serif italic text-fg-primary leading-none transition-all duration-300">
+            <h1
+                className={`${instrumentSerif.className} text-4xl text-fg-primary leading-none tracking-wide transition-all duration-300`}
+            >
                 Evan Ferreira
             </h1>
             <div className="lg:hidden flex gap-4 mx-auto">
