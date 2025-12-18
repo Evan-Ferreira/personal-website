@@ -12,7 +12,7 @@ export function Header() {
     return (
         <header className="flex flex-col lg:w-fit w-full bento-card items-center justify-center mx-auto gap-2">
             <h1
-                className={`${instrumentSerif.className} text-4xl text-fg-primary leading-none tracking-wide transition-all duration-300`}
+                className={`${instrumentSerif.className} text-4xl text-fg-primary leading-none tracking-wider transition-all duration-300`}
             >
                 Evan Ferreira
             </h1>
