@@ -1,17 +1,16 @@
-import { Badge } from '@/components/badge';
 import Image from 'next/image';
 import { Experience as ExperienceComponent } from '@/components/experience';
 
 const EXPERIENCES = [
     {
-        title: 'Software Engineering Intern',
+        title: 'Software Engineer',
         description: 'Summer 2026',
-        image: <Image width={45} height={45} src="/uber.svg" alt="Uber Logo" />,
+        image: <Image width={40} height={40} src="/uber.svg" alt="Uber Logo" />,
         date: 'INCOMING SUMMER 2026',
         location: 'SAN FRANCISCO, CA',
     },
     {
-        title: 'Software Engineering Intern',
+        title: 'Software Engineer',
         description: 'Payments / Local Payment Methods',
         image: (
             <Image
@@ -36,8 +35,8 @@ const EXPERIENCES = [
         description: 'RxSkin, Prepare Medical, Core',
         image: (
             <Image
-                width={45}
-                height={45}
+                width={40}
+                height={40}
                 src="/pillexa.jpeg"
                 alt="Pillexa Logo"
             />
@@ -50,8 +49,8 @@ const EXPERIENCES = [
         description: 'Acquired by Taiv (YC W20)',
         image: (
             <Image
-                width={45}
-                height={45}
+                width={40}
+                height={40}
                 src="/localreach.jpeg"
                 alt="Local Reach Logo"
             />
@@ -63,7 +62,7 @@ const EXPERIENCES = [
 
 export function Experience() {
     return (
-        <section className="flex w-2/5 flex-col gap-3">
+        <section className="flex lg:w-2/5 w-full flex-col gap-3">
             <h2 className="text-xs text-fg-tertiary mt-6">EXPERIENCE</h2>
             {EXPERIENCES.map(
                 ({ title, description, image, date, location }, index) => (

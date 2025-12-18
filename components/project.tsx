@@ -17,7 +17,7 @@ export function Project({
     return (
         <a
             href={link}
-            className="bento-card flex flex-col gap-2 relative group min-h-36"
+            className="bento-card flex flex-col gap-2 relative group min-h-41"
         >
             <p className="text-xs min-w-64">{name}</p>
             <p
@@ -33,7 +33,9 @@ export function Project({
                     </Badge>
                 ))}
             </div>
-            <p className="text-fg-tertiary text-xs min-h-12">{description}</p>
+            <p className="text-fg-tertiary lg:text-xs min-h-12 text-[10px]">
+                {description}
+            </p>
             <div className="flex gap-1">
                 {technologies.map((tech) => (
                     <TechBadge key={tech}>{tech}</TechBadge>

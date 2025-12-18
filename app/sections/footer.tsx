@@ -1,6 +1,6 @@
 export function Footer() {
     return (
-        <footer className="flex justify-between mb-8">
+        <footer className="flex justify-between mb-8 mt-16">
             <p className="text-xs text-fg-tertiary">© 2025 Evan Ferreira</p>
             <p className="text-xs text-fg-tertiary">
                 Inspired by{' '}
