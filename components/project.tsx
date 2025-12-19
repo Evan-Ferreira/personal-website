@@ -17,7 +17,7 @@ export function Project({
     return (
         <a
             href={link}
-            className="bento-card flex flex-col gap-2 relative group min-h-41"
+            className="bento-card flex flex-col gap-2 relative group h-41"
         >
             <p className="text-xs min-w-64">{name}</p>
             <p

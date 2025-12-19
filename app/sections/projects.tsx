@@ -29,7 +29,7 @@ const PROJECTS = [
 export function Projects() {
     return (
         <section className="flex flex-col gap-3 lg:max-w-3/5">
-            <h2 className="text-xs text-fg-tertiary mt-6">PROJECTS</h2>
+            <h2 className="text-xs text-fg-tertiary lg:mt-6">PROJECTS</h2>
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-3">
                 {PROJECTS.map(
                     (
