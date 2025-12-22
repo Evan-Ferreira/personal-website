@@ -105,6 +105,27 @@
     ul.flex li.align-middle > * {
         grid-column: 2;
     }
+
+    .nav-link-active {
+        position: relative;
+    }
+
+    .nav-link-active::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 1.5px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            var(--accent),
+            transparent
+        );
+        background-size: 200% 100%;
+        animation: glow-sweep 3s ease-in-out infinite;
+    }
 }
 
 body {
