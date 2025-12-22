@@ -5,7 +5,7 @@ import { Footer } from '@/app/sections/footer';
 
 export default function Home() {
     return (
-        <main className="font-mono lg:mt-16 mt-8 lg:max-w-7xl mx-auto flex flex-1 flex-col lg:px-8 px-4">
+        <main className="font-mono lg:mt-10 mt-8 lg:max-w-7xl mx-auto flex flex-1 flex-col lg:px-8 px-4">
             <Header />
             <div className="flex lg:flex-row flex-col justify-center gap-6">
                 <ExperienceSection />
