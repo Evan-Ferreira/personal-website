@@ -13,7 +13,7 @@ export function Navbar() {
         >
             <Link
                 href="/"
-                className={`mx-3 px-1 w-fit hover:text-fg-tertiary ${
+                className={`mx-3 px-1 w-fit hover:text-fg-tertiary transition-all ease-in-out duration-300 ${
                     pathname === '/' ? 'nav-link-active' : ''
                 }`}
             >
@@ -21,7 +21,7 @@ export function Navbar() {
             </Link>
             <Link
                 href="/blog"
-                className={`mx-3 px-1 text-xs hover:text-fg-tertiary ${
+                className={`mx-3 px-1 text-xs hover:text-fg-tertiary transition-all ease-in-out duration-300 ${
                     pathname === '/blog' ? 'nav-link-active' : ''
                 }`}
             >
