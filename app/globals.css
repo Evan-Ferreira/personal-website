@@ -44,6 +44,49 @@
         background-size: 24px 24px;
     }
 
+    .bento-navbar {
+        background: var(--bg-secondary);
+        border: 1px solid var(--navbar-border);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        position: fixed;
+    }
+
+    .bento-navbar::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        padding: 1px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            var(--accent),
+            transparent
+        );
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .bento-navbar:hover::before {
+        opacity: 1;
+        animation: glow-sweep 3s ease-in-out infinite;
+    }
+
+    .bento-navbar:hover {
+        background: var(--bg-tertiary);
+        box-shadow: 0 0 20px rgba(249, 115, 22, 0.15),
+            0 0 40px rgba(249, 115, 22, 0.05);
+        border-color: rgba(249, 115, 22, 0.2);
+    }
+
     .bento-card {
         background: var(--bg-secondary);
         border: 1px solid var(--border);
