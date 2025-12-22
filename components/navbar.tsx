@@ -9,7 +9,7 @@ export function Navbar() {
     return (
         <div
             className="fixed! text-fg-primary font-mono text-xs flex items-center bottom-16 left-1/2 -translate-x-1/2 \
-        bento-card w-fit bg-u-950! py-3!"
+        bento-card w-fit bg-u-950! py-3! border-navbar-border!"
         >
             <Link
                 href="/"
