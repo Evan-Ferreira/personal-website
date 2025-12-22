@@ -6,6 +6,8 @@ import { usePathname } from 'next/navigation';
 export function Navbar() {
     const pathname = usePathname();
 
+    if (process.env.NEXT_PUBLIC_ENV !== 'dev') return null;
+
     return (
         <div
             className="fixed! text-fg-primary font-mono text-xs flex items-center bottom-16 left-1/2 -translate-x-1/2 \
