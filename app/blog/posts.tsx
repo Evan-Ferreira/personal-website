@@ -1,0 +1,32 @@
+import { readdir } from 'fs/promises';
+import { join } from 'path';
+
+export async function getPostFrontmatter(slug: string) {
+    const mdxFile = await import(`@/app/blog/posts/${slug}.mdx`);
+    const title = mdxFile.title;
+    const subtitle = mdxFile.subtitle;
+    const date = mdxFile.date;
+    const visibility = mdxFile.visibility;
+    console.log(title, subtitle, date, visibility);
+    return { title, subtitle, date, visibility };
+}
+
+export async function getAllPostsFrontmatter() {
+    const postsDirectory = join(process.cwd(), 'app/blog/posts');
+    const files = await readdir(postsDirectory);
+
+    const mdxFiles = files.filter((file) => file.endsWith('.mdx'));
+
+    const posts = await Promise.all(
+        mdxFiles.map(async (file) => {
+            const slug = file.replace(/\.mdx$/, '');
+            const frontmatter = await getPostFrontmatter(slug);
+            return {
+                slug,
+                ...frontmatter,
+            };
+        })
+    );
+
+    return posts;
+}

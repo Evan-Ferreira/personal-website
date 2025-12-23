@@ -184,7 +184,3 @@ body {
         linear-gradient(90deg, var(--grid-lines) 1px, transparent 1px);
     background-size: 24px 24px;
 }
-
-/* bg-(--color-foreground) border border-(--color-border) rounded-xl p-4 relative 
-                  hover:scale-101 duration-300 ease-in-out
-                  hover:border-(--color-border-accent) hover:shadow-(--color-border-accent) hover:inset-shadow-(--color-border-accent)" */
