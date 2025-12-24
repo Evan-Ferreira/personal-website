@@ -15,7 +15,7 @@ export function Header({
     subtitle: string;
 }) {
     return (
-        <header className="flex flex-col lg:w-fit w-full items-center justify-center mx-auto gap-2">
+        <header className="flex flex-col lg:w-fit w-full items-center justify-center mx-auto gap-2 text-center">
             <h1
                 className={`${instrumentSerif.className} text-4xl text-fg-primary leading-none tracking-wider transition-all duration-300`}
             >

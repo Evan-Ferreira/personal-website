@@ -1,5 +1,4 @@
 import { Instrument_Serif } from 'next/font/google';
-import Image from 'next/image';
 
 const instrumentSerif = Instrument_Serif({
     weight: '400',
