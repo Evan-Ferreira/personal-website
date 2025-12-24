@@ -71,7 +71,7 @@ export function Header({
                     </svg>
                 </a>
             </div>
-            <div className="flex text-xs gap-1 uppercase">
+            <div className="flex text-[10px] gap-1 uppercase">
                 <p>{subtitle}</p>
             </div>
         </header>
