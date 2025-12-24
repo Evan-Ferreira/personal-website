@@ -3,11 +3,13 @@ import { join } from 'path';
 
 export async function getPostFrontmatter(slug: string) {
     const mdxFile = await import(`@/app/blog/posts/${slug}.mdx`);
-    const title = mdxFile.title;
-    const subtitle = mdxFile.subtitle;
-    const date = mdxFile.date;
-    const visibility = mdxFile.visibility;
-    console.log(title, subtitle, date, visibility);
+
+    const frontmatter = mdxFile.frontmatter || {};
+    const title = frontmatter.title;
+    const subtitle = frontmatter.subtitle;
+    const date = frontmatter.date;
+    const visibility = frontmatter.visibility;
+
     return { title, subtitle, date, visibility };
 }
 

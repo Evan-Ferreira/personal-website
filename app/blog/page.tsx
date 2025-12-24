@@ -1,4 +1,4 @@
-import { Header } from '@/app/blog/sections/header';
+import { Header } from '@/app/blog/header';
 import { Badge } from '@/components/badge';
 import { Metadata } from 'next';
 
