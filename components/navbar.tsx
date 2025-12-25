@@ -8,7 +8,7 @@ export function Navbar() {
 
     return (
         <div
-            className="text-fg-primary font-mono text-xs flex items-center bottom-16 left-1/2 -translate-x-1/2 \
+            className="text-fg-primary font-mono text-xs flex items-center bottom-8 left-1/2 -translate-x-1/2 \
         bento-navbar w-fit py-3 px-4"
         >
             <Link

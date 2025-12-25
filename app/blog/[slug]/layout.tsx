@@ -42,7 +42,7 @@ export default async function Layout({
     }
 
     return (
-        <article className="flex flex-col items-center text-left px-4 py-8 font-mono gap-12 min-h-screen h-full">
+        <article className="flex flex-col items-center text-left px-4 lg:py-8 py-4 font-mono gap-8 min-h-screen h-full">
             <Header title={title} subtitle={subtitle} />
             <section className="max-w-2xl text-sm leading-relaxed">
                 {children}
