@@ -1,7 +1,7 @@
 export function Footer() {
     return (
         <footer className="flex justify-between mt-auto max-w-2xl w-full">
-            <p className="text-xs text-fg-tertiary">© 2025 Evan Ferreira</p>
+            <p className="text-xs text-fg-tertiary">© 2026 Evan Ferreira</p>
             <div className="flex gap-4">
                 <a
                     href="https://github.com/Evan-Ferreira"
