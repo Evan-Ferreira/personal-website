@@ -1,11 +1,11 @@
 export default async function Article({
     params,
 }: {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ article: string; book: string }>;
 }) {
-    const { slug } = await params;
+    const { book } = await params;
     // Import the MDX file - frontmatter becomes named exports, content is default export
-    const PostModule = await import(`@/app/blog/posts/${slug}.mdx`);
+    const PostModule = await import(`@/app/blog/posts/books/${book}.mdx`);
 
     const Post = PostModule.default;
 
@@ -15,7 +15,7 @@ export default async function Article({
 }
 
 export function generateStaticParams() {
-    return [{ slug: 'my-bookshelf' }];
+    return [{ article: 'my-bookshelf', book: 'the-design-of-everyday-things' }];
 }
 
 export const dynamicParams = false;

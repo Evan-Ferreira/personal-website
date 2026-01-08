@@ -2,15 +2,16 @@ import type { Metadata } from 'next';
 import { getPostFrontmatter } from '@/utils/posts';
 import { notFound } from 'next/navigation';
 import { Instrument_Serif } from 'next/font/google';
-import { Header } from '@/app/blog/[slug]/header';
+import { Header } from '@/app/blog/[article]/header';
 import { Footer } from '@/app/blog/footer';
 
 export async function generateMetadata({
     params,
 }: {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ book: string }>;
 }): Promise<Metadata> {
-    const { slug } = await params;
+    const { book } = await params;
+    const slug = 'books/' + book;
     const { title, subtitle } = await getPostFrontmatter(slug);
 
     return {
@@ -31,9 +32,11 @@ export default async function Layout({
     params,
 }: Readonly<{
     children: React.ReactNode;
-    params: Promise<{ slug: string }>;
+    params: Promise<{ book: string }>;
 }>) {
-    const { slug } = await params;
+    const { book } = await params;
+
+    const slug = 'books/' + book;
     const { visibility, title, subtitle } = await getPostFrontmatter(slug);
 
     // Throw 404 if post doesn't exist or is not public
