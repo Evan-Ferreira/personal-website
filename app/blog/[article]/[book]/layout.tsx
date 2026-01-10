@@ -30,7 +30,7 @@ export default async function Layout({
     const { book } = await params;
 
     const slug = 'books/' + book;
-    const { visibility, title, subtitle } = await getPostFrontmatter(slug);
+    const { visibility } = await getPostFrontmatter(slug);
 
     // Throw 404 if post doesn't exist or is not public
     if (visibility !== 'public') {
