@@ -15,7 +15,7 @@ export default async function Article({
 }
 
 export function generateStaticParams() {
-    return [{ slug: 'my-bookshelf' }];
+    return [{ article: 'my-bookshelf' }];
 }
 
 export const dynamicParams = false;

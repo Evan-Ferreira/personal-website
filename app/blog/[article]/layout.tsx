@@ -19,13 +19,6 @@ export async function generateMetadata({
     };
 }
 
-const instrumentSerif = Instrument_Serif({
-    weight: '400',
-    subsets: ['latin'],
-    style: 'italic',
-    variable: '--font-instrument-serif',
-});
-
 export default async function Layout({
     children,
     params,
