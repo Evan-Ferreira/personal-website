@@ -27,7 +27,7 @@ export async function getAllPostsFrontmatter() {
                 slug,
                 ...frontmatter,
             };
-        })
+        }),
     );
 
     return posts;
