@@ -23,7 +23,15 @@ export default async function Blog() {
             <section className="flex flex-col gap-3 max-w-2xl w-full">
                 <h2 className="text-xs text-fg-tertiary mt-6">WRITING</h2>
                 {posts
-                    ?.filter((post) => post.visibility === 'public')
+                    ?.filter((post) => {
+                        if (
+                            process.env.NEXT_PUBLIC_ENV === 'dev' ||
+                            post.visibility === 'public'
+                        ) {
+                            return true;
+                        }
+                        return false;
+                    })
                     .map((post) => (
                         <Post
                             key={post.slug}
