@@ -8,6 +8,13 @@ const components: MDXComponents = {
         </ul>
     ),
 
+    // Style ordered lists
+    ol: ({ children, ...props }) => (
+        <ol className="list-decimal list-inside ml-4 space-y-1 my-2" {...props}>
+            {children}
+        </ol>
+    ),
+
     // Style list items
     li: ({ children, ...props }) => (
         <li className="text-sm" {...props}>
