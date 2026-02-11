@@ -3,9 +3,16 @@ import type { MDXComponents } from 'mdx/types';
 const components: MDXComponents = {
     // Style unordered lists
     ul: ({ children, ...props }) => (
-        <ul className="list-disc list-inside ml-4 space-y-1" {...props}>
+        <ul className="list-disc list-inside ml-4 space-y-1 my-2" {...props}>
             {children}
         </ul>
+    ),
+
+    // Style ordered lists
+    ol: ({ children, ...props }) => (
+        <ol className="list-decimal list-inside ml-4 space-y-1 my-2" {...props}>
+            {children}
+        </ol>
     ),
 
     // Style list items
@@ -14,9 +21,10 @@ const components: MDXComponents = {
             {children}
         </li>
     ),
+
     // Style headings
     h1: ({ children, ...props }) => (
-        <h1 className="text-xs text-fg-tertiary mb-4" {...props}>
+        <h1 className="text-xs text-fg-tertiary mb-2 mt-6" {...props}>
             {children}
         </h1>
     ),
@@ -26,6 +34,16 @@ const components: MDXComponents = {
         <p className="mb-4 text-sm" {...props}>
             {children}
         </p>
+    ),
+
+    // Style blockquotes
+    blockquote: ({ children, ...props }) => (
+        <blockquote
+            className="border-l-3 border-gray-300 pl-3 my-3 italic text-sm"
+            {...props}
+        >
+            {children}
+        </blockquote>
     ),
 };
 

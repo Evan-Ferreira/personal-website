@@ -31,8 +31,7 @@ export default async function Layout({
     const slug = book ? `books/${book}` : article;
     const { visibility, title, subtitle } = await getPostFrontmatter(slug);
 
-    // Throw 404 if post doesn't exist or is not public
-    if (visibility !== 'public') {
+    if (visibility === 'private' && process.env.NEXT_PUBLIC_ENV === 'prod') {
         notFound();
     }
 
