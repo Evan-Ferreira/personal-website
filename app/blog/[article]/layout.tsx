@@ -31,6 +31,10 @@ export default async function Layout({
     const slug = book ? `books/${book}` : article;
     const { visibility, title, subtitle } = await getPostFrontmatter(slug);
 
+    if (visibility === 'private' && process.env.NEXT_PUBLIC_ENV === 'prod') {
+        notFound();
+    }
+
     return (
         <article className="flex flex-col items-center text-left px-4 lg:py-8 py-4 font-mono gap-8 min-h-screen h-full">
             <Header title={title} subtitle={subtitle} />
