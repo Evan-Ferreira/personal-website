@@ -39,21 +39,18 @@ export type Database = {
           created_at: string
           id: string
           likes: number
-          slug: string
           views: number
         }
         Insert: {
           created_at?: string
-          id?: string
+          id: string
           likes?: number
-          slug: string
           views?: number
         }
         Update: {
           created_at?: string
           id?: string
           likes?: number
-          slug?: string
           views?: number
         }
         Relationships: []
