@@ -11,18 +11,18 @@ export async function GET(
         const { data, error } = await supabase
             .from('articles')
             .select('views, likes')
-            .eq('slug', slug)
+            .eq('id', slug)
             .maybeSingle();
+
+        if (error) {
+            throw error;
+        }
 
         if (!data) {
             return Response.json(
                 { error: 'Article not found' },
                 { status: 404 },
             );
-        }
-
-        if (error) {
-            throw error;
         }
 
         return Response.json({ views: data.views, likes: data.likes });
