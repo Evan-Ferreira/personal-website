@@ -3,7 +3,7 @@ import { Experience as ExperienceSection } from '@/app/sections/experience';
 import { Projects as ProjectsSection } from '@/app/sections/projects';
 import { Footer } from '@/app/sections/footer';
 
-export default function Home() {
+export default async function Home() {
     return (
         <main className="font-mono lg:py-8 py-4 lg:max-w-7xl mx-auto flex flex-1 flex-col lg:px-8 px-4">
             <Header />
