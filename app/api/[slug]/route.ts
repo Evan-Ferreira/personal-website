@@ -12,12 +12,17 @@ export async function GET(
             .from('articles')
             .select('views, likes')
             .eq('slug', slug)
-            .single();
-        if (error) {
+            .maybeSingle();
+
+        if (!data) {
             return Response.json(
-                { error: `Unable to fetch article stats at this time` },
-                { status: 500 },
+                { error: 'Article not found' },
+                { status: 404 },
             );
+        }
+
+        if (error) {
+            throw error;
         }
 
         return Response.json({ views: data.views, likes: data.likes });
