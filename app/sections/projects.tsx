@@ -34,7 +34,7 @@ export function Projects() {
                 {PROJECTS.map(
                     (
                         { name, description, technologies, link, badges },
-                        index
+                        index,
                     ) => (
                         <Project
                             key={index}
@@ -44,7 +44,7 @@ export function Projects() {
                             link={link}
                             badges={badges}
                         />
-                    )
+                    ),
                 )}
             </div>
         </section>

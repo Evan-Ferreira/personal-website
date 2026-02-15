@@ -27,7 +27,6 @@ export default async function Layout({
     params: Promise<{ article: string; book?: string }>;
 }>) {
     const { article, book } = await params;
-
     const slug = book ? `books/${book}` : article;
     const { visibility, title, subtitle } = await getPostFrontmatter(slug);
 
@@ -36,7 +35,7 @@ export default async function Layout({
     }
 
     return (
-        <article className="flex flex-col items-center text-left px-4 lg:py-8 py-4 font-mono gap-8 min-h-screen h-full">
+        <article className="flex flex-col items-center text-left px-4 lg:py-8 py-4 font-mono min-h-screen h-full">
             <Header title={title} subtitle={subtitle} />
             <section className="max-w-2xl text-sm leading-relaxed">
                 {children}

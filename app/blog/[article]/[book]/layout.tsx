@@ -24,7 +24,6 @@ export default async function Layout({
     params: Promise<{ book: string }>;
 }>) {
     const { book } = await params;
-
     const { visibility } = await getPostFrontmatter('books' + '/' + book);
 
     // Throw 404 if post doesn't exist or is not public

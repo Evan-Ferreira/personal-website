@@ -4,9 +4,10 @@
     --bg-primary: #09090b;
     --bg-secondary: #0f0f11;
     --bg-tertiary: #18181b;
-    --fg-primary: #fafafa;
-    --fg-secondary: #d4d4d8;
+    --fg-primary: #d4d4d8;
+    --fg-secondary: #fafafa;
     --fg-tertiary: #71717a;
+    --fg-heading-2: #7e7e88;
     --accent: #f97316;
     --accent-glow: #f9731680;
     --border: #ffffff14;
@@ -15,7 +16,7 @@
     --border-accent: #f9731633;
     --font-mono: 'Geist Mono', 'Geist Mono Fallback';
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: var(--fg-primary);
     color-scheme: dark;
 }
 
@@ -27,6 +28,7 @@
     --color-fg-primary: var(--fg-primary);
     --color-fg-secondary: var(--fg-secondary);
     --color-fg-tertiary: var(--fg-tertiary);
+    --color-fg-heading-2: var(--fg-heading-2);
     --color-accent: var(--accent);
     --color-border: var(--border);
     --color-border-accent: var(--border-accent);
@@ -36,10 +38,8 @@
 
 @layer utilities {
     .bg-grid {
-        background-image: linear-gradient(
-                var(--grid-lines) 1px,
-                transparent 1px
-            ),
+        background-image:
+            linear-gradient(var(--grid-lines) 1px, transparent 1px),
             linear-gradient(90deg, var(--grid-lines) 1px, transparent 1px);
         background-size: 24px 24px;
     }
@@ -66,7 +66,8 @@
         );
         background-size: 200% 100%;
         background-position: 100% 0;
-        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
             linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
@@ -82,7 +83,8 @@
 
     .bento-navbar:hover {
         background: var(--bg-tertiary);
-        box-shadow: 0 0 20px rgba(249, 115, 22, 0.15),
+        box-shadow:
+            0 0 20px rgba(249, 115, 22, 0.15),
             0 0 40px rgba(249, 115, 22, 0.05);
         border-color: rgba(249, 115, 22, 0.2);
     }
@@ -110,7 +112,8 @@
         );
         background-size: 200% 100%;
         background-position: 100% 0;
-        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
             linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
@@ -126,7 +129,8 @@
 
     .bento-card:hover {
         background: var(--bg-tertiary);
-        box-shadow: 0 0 20px rgba(249, 115, 22, 0.15),
+        box-shadow:
+            0 0 20px rgba(249, 115, 22, 0.15),
             0 0 40px rgba(249, 115, 22, 0.05);
         border-color: rgba(249, 115, 22, 0.2);
     }
@@ -180,7 +184,8 @@ body {
 }
 
 .bg-grid {
-    background-image: linear-gradient(var(--grid-lines) 1px, transparent 1px),
+    background-image:
+        linear-gradient(var(--grid-lines) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-lines) 1px, transparent 1px);
     background-size: 24px 24px;
 }
