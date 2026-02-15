@@ -74,7 +74,7 @@ export function Experience() {
                         date={date}
                         location={location}
                     />
-                )
+                ),
             )}
         </section>
     );
