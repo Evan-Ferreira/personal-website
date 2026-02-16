@@ -33,9 +33,9 @@ export async function POST(
                 new Date(data.updated_at).getTime(),
         });
     } catch (error) {
-        console.error('Error fetching visitor data from database', error);
+        console.error('Error saving visitor data to database', error);
         return NextResponse.json(
-            { error: 'Error fetching visitor data from database' },
+            { error: 'Error saving visitor data to database' },
             { status: 500 },
         );
     }
