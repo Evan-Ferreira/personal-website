@@ -3,6 +3,8 @@ import { Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { Navbar } from '@/components/navbar';
+import QueryProvider from '@/app/providers/query';
+import VisitorProvider from '@/app/providers/visitor';
 
 const geistMono = Geist_Mono({
     variable: '--font-geist-mono',
@@ -25,7 +27,9 @@ export default function RootLayout({
             <body
                 className={`bg-grid ${geistMono.variable} antialiased min-h-screen flex flex-col relative`}
             >
-                {children}
+                <QueryProvider>
+                    <VisitorProvider>{children}</VisitorProvider>
+                </QueryProvider>
                 <Navbar />
                 <Analytics />
             </body>
