@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 import { Header } from '@/app/blog/[article]/header';
 import { Footer } from '@/app/blog/footer';
 import { ActionsBar } from '@/app/blog/[article]/actions-bar';
-import supabase from '@/utils/supabase/admin';
 
 export async function generateMetadata({
     params,
@@ -35,16 +34,10 @@ export default async function Layout({
         notFound();
     }
 
-    const { data: articleData } = await supabase
-        .from('articles')
-        .select('likes')
-        .eq('id', slug)
-        .maybeSingle();
-
     return (
         <article className="flex flex-col items-center gap-8 text-left px-4 lg:py-8 py-4 font-mono min-h-screen h-full max-w-2xl mx-auto">
             <Header title={title} subtitle={subtitle} />
-            <ActionsBar boops={articleData?.likes || 0} slug={slug} />
+            <ActionsBar slug={slug} />
             <section className="text-sm leading-relaxed -mt-10">
                 {children}
             </section>
