@@ -1,7 +1,6 @@
 'use client';
 
-import { useBoops, MAX_BOOPS } from '@/app/hooks/use-boops';
-import { useState } from 'react';
+import { useBoops } from '@/app/hooks/use-boops';
 
 const FILL_PER_CLICK = 20;
 
@@ -18,11 +17,11 @@ export function ActionsBar({
     );
 
     return (
-        <div className="flex items-center justify-between gap-4 w-full border-t border-b border-border py-2">
+        <div className="flex items-center relative justify-between gap-4 w-full border-t border-b border-border py-2">
             <div className="flex items-center gap-2">
                 <button
                     type="button"
-                    onClick={incrementBoops}
+                    onClick={() => incrementBoops()}
                     className="relative flex items-center justify-center w-8 h-8 transition-all hover:cursor-pointer
                     active:scale-110 duration-200 ease-in-out"
                     aria-label="Like"
@@ -51,7 +50,7 @@ export function ActionsBar({
                 </button>
                 <p className="text-fg-tertiary text-sm ">{totalBoops} Boops</p>
             </div>
-            {/* <button
+            <button
                 type="button"
                 aria-label="Link"
                 className="mr-4 hover:cursor-pointer"
@@ -63,7 +62,8 @@ export function ActionsBar({
                     width={16}
                     height={16}
                 />
-            </button> */}
+            </button>
+            <div className="absolute w-full h-full -top-full"></div>
         </div>
     );
 }

@@ -21,6 +21,15 @@ export function useBoops(slug: string, previousBoops: number) {
         }
     }, [slug]);
 
+    function rollbackBoops() {
+        setUserBoops((boops) => {
+            const next = Math.max(boops - 1, 0);
+            localStorage.setItem(STORAGE_KEY(slug), `${next}`);
+            return next;
+        });
+        setTotalBoops((boops) => Math.max(boops - 1, 0));
+    }
+
     async function incrementBoops() {
         try {
             if (userBoops >= MAX_BOOPS) return false;
@@ -37,15 +46,17 @@ export function useBoops(slug: string, previousBoops: number) {
                 localStorage.setItem(STORAGE_KEY(slug), `${next}`);
                 return next;
             });
+            setTotalBoops((boops) => boops + 1);
 
-            const res = await fetch(`/api/blog/${slug}/boops`, {
+            const res = await fetch(`/api/blog/${encodeURIComponent(slug)}/boops`, {
                 method: 'PATCH',
                 body: JSON.stringify({ increment_amount: 1 }),
             });
 
-            if (!res.ok) throw new Error('Error saving incremented boops');
-
-            setTotalBoops((boops) => boops + 1);
+            if (!res.ok) {
+                rollbackBoops();
+                throw new Error('Error saving incremented to the database');
+            }
 
             return true;
         } catch (error) {

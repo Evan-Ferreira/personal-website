@@ -7,11 +7,12 @@ export async function GET(
 ) {
     try {
         const { slug } = await params;
+        const decodedSlug = decodeURIComponent(slug);
 
         const { data, error } = await supabase
             .from('articles')
             .select('views, likes')
-            .eq('id', slug)
+            .eq('id', decodedSlug)
             .maybeSingle();
 
         if (error) {

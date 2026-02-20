@@ -7,6 +7,7 @@ export async function PATCH(
 ) {
     try {
         const { slug } = await params;
+        const decodedSlug = decodeURIComponent(slug);
         const { increment_amount } = await req.json();
 
         if (!increment_amount) {
@@ -28,7 +29,7 @@ export async function PATCH(
         const { data: newBoops, error } = await supabase.rpc(
             'increment_article_likes',
             {
-                article_id: slug,
+                article_id: decodedSlug,
                 amount: increment_amount,
             },
         );
