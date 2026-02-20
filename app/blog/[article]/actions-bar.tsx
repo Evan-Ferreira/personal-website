@@ -96,12 +96,12 @@ export function ActionsBar({
                     height={18}
                 />
             </button>
-            <div className="absolute -top-1/2 w-full h-full pointer-events-none">
+            <div className="absolute -top-1/2 w-full h-full pointer-events-none" role="status" aria-live="polite">
                 <AnimatePresence>
                     {boopMessage && (
                         <motion.p
                             key="boop"
-                            className="text-sm text-fg-primary right-0 whitespace-nowrap text-left"
+                            className="absolute left-0 text-sm text-fg-primary whitespace-nowrap"
                             initial={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.6 }}
@@ -112,7 +112,7 @@ export function ActionsBar({
                     {linkMessage && (
                         <motion.p
                             key="link"
-                            className="text-sm text-fg-primary right-0 whitespace-nowrap text-right"
+                            className="absolute right-0 text-sm text-fg-primary whitespace-nowrap"
                             initial={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.6 }}
