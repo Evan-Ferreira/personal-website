@@ -17,7 +17,7 @@ export function useVisitor() {
             return data;
         },
         onSuccess: (_, visitorId) => {
-            sessionStorage.setItem('visitor_id', visitorId);
+            localStorage.setItem('visitor_id', visitorId);
         },
         onError: (error) => {
             console.error('Error updating visitor data', error);
@@ -25,7 +25,7 @@ export function useVisitor() {
     });
 
     useEffect(() => {
-        const sessionVisitorId = sessionStorage.getItem('visitor_id');
+        const sessionVisitorId = localStorage.getItem('visitor_id');
         if (sessionVisitorId) {
             setVisitorId(sessionVisitorId);
             return;
