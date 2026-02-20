@@ -96,7 +96,11 @@ export function ActionsBar({
                     height={18}
                 />
             </button>
-            <div className="absolute -top-1/2 w-full h-full pointer-events-none" role="status" aria-live="polite">
+            <div
+                className="absolute -top-1/2 w-full h-full pointer-events-none"
+                role="status"
+                aria-live="polite"
+            >
                 <AnimatePresence>
                     {boopMessage && (
                         <motion.p
