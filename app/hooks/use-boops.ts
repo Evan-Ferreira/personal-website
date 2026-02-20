@@ -1,16 +1,34 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const STORAGE_KEY = (slug: string) => `boops-${slug}`;
 export const MAX_BOOPS = 5;
 
 export function useBoops(slug: string) {
-    const [userBoops, setUserBoops] = useState(0);
     const [totalBoops, setTotalBoops] = useState(0);
+    const [isMaxed, setIsMaxed] = useState(false);
+    const userBoopsRef = useRef(0);
 
     useEffect(() => {
+        userBoopsRef.current = 0;
+        setIsMaxed(false);
+        setTotalBoops(0);
+
         (async () => {
+            const stored = localStorage.getItem(STORAGE_KEY(slug));
+
+            if (stored) {
+                const parsed = parseInt(stored, 10);
+                if (!isNaN(parsed) && parsed <= MAX_BOOPS) {
+                    userBoopsRef.current = parsed;
+                    setIsMaxed(parsed >= MAX_BOOPS);
+                }
+            } else {
+                localStorage.setItem(STORAGE_KEY(slug), String(0));
+                setIsMaxed(false);
+            }
+
             try {
                 const res = await fetch(
                     `/api/blog/${encodeURIComponent(slug)}/boops`,
@@ -21,16 +39,6 @@ export function useBoops(slug: string) {
                 const { boops } = await res.json();
 
                 setTotalBoops(boops);
-                const stored = localStorage.getItem(STORAGE_KEY(slug));
-
-                if (stored) {
-                    const parsed = parseInt(stored, 10);
-                    if (!isNaN(parsed) && parsed <= MAX_BOOPS) {
-                        setUserBoops(parsed);
-                    }
-                } else {
-                    localStorage.setItem(STORAGE_KEY(slug), `${userBoops}`);
-                }
             } catch (error) {
                 console.error('Error fetching boops');
             }
@@ -38,31 +46,25 @@ export function useBoops(slug: string) {
     }, [slug]);
 
     function rollbackBoops() {
-        setUserBoops((boops) => {
-            const next = Math.max(boops - 1, 0);
-            localStorage.setItem(STORAGE_KEY(slug), `${next}`);
-            return next;
-        });
+        userBoopsRef.current = Math.max(userBoopsRef.current - 1, 0);
+        localStorage.setItem(STORAGE_KEY(slug), String(userBoopsRef.current));
         setTotalBoops((boops) => Math.max(boops - 1, 0));
+        if (userBoopsRef.current < MAX_BOOPS) {
+            setIsMaxed(false);
+        }
     }
 
     async function incrementBoops() {
         try {
-            if (userBoops >= MAX_BOOPS) return false;
+            if (userBoopsRef.current >= MAX_BOOPS) return false;
 
-            setUserBoops((boops) => {
-                const next = boops + 1;
-                const stored = localStorage.getItem(STORAGE_KEY(slug));
-                if (stored) {
-                    const parsed = parseInt(stored, 10);
-                    if (!isNaN(parsed) && parsed >= MAX_BOOPS) {
-                        return next;
-                    }
-                }
-                localStorage.setItem(STORAGE_KEY(slug), `${next}`);
-                return next;
-            });
+            userBoopsRef.current += 1;
+            const next = userBoopsRef.current;
             setTotalBoops((boops) => boops + 1);
+            if (next >= MAX_BOOPS) {
+                setIsMaxed(true);
+            }
+            localStorage.setItem(STORAGE_KEY(slug), String(next));
 
             const res = await fetch(
                 `/api/blog/${encodeURIComponent(slug)}/boops`,
@@ -86,8 +88,8 @@ export function useBoops(slug: string) {
 
     return {
         totalBoops,
-        userBoops,
+        userBoops: userBoopsRef.current,
         incrementBoops,
-        isMaxed: userBoops >= MAX_BOOPS,
+        isMaxed,
     };
 }
