@@ -14,10 +14,10 @@ export function useBoops(slug: string) {
             const res = await fetch(
                 `/api/blog/${encodeURIComponent(slug)}/boops`,
             );
-            const { boops } = await res.json();
             if (!res.ok) {
                 throw new Error('Error fetching boops');
             }
+            const { boops } = await res.json();
             setTotalBoops(boops);
 
             const stored = localStorage.getItem(STORAGE_KEY(slug));
