@@ -11,23 +11,28 @@ export function useBoops(slug: string) {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(
-                `/api/blog/${encodeURIComponent(slug)}/boops`,
-            );
-            if (!res.ok) {
-                throw new Error('Error fetching boops');
-            }
-            const { boops } = await res.json();
-            setTotalBoops(boops);
-
-            const stored = localStorage.getItem(STORAGE_KEY(slug));
-            if (stored) {
-                const parsed = parseInt(stored, 10);
-                if (!isNaN(parsed) && parsed <= MAX_BOOPS) {
-                    setUserBoops(parsed);
+            try {
+                const res = await fetch(
+                    `/api/blog/${encodeURIComponent(slug)}/boops`,
+                );
+                if (!res.ok) {
+                    throw new Error('Error fetching boops');
                 }
-            } else {
-                localStorage.setItem(STORAGE_KEY(slug), `${userBoops}`);
+                const { boops } = await res.json();
+
+                setTotalBoops(boops);
+                const stored = localStorage.getItem(STORAGE_KEY(slug));
+
+                if (stored) {
+                    const parsed = parseInt(stored, 10);
+                    if (!isNaN(parsed) && parsed <= MAX_BOOPS) {
+                        setUserBoops(parsed);
+                    }
+                } else {
+                    localStorage.setItem(STORAGE_KEY(slug), `${userBoops}`);
+                }
+            } catch (error) {
+                console.error('Error fetching boops');
             }
         })();
     }, [slug]);
