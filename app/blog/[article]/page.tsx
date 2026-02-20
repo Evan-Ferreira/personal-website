@@ -6,7 +6,7 @@ export default async function Article({
     const { article } = await params;
     // Import the MDX file - frontmatter becomes named exports, content is default export
     const PostModule = await import(`@/app/blog/posts/${article}.mdx`);
-    
+
     const Post = PostModule.default;
 
     // Frontmatter fields (title, subtitle, date, visibility) are available as named exports
@@ -15,7 +15,10 @@ export default async function Article({
 }
 
 export function generateStaticParams() {
-    return [{ article: 'my-bookshelf'}, { article: 'how-to-write-cold-emails'}];
+    return [
+        { article: 'my-bookshelf' },
+        { article: 'how-to-write-cold-emails' },
+    ];
 }
 
 export const dynamicParams = false;
