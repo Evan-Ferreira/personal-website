@@ -6,17 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const FILL_PER_CLICK = 20;
 
-export function ActionsBar({
-    boops: previousBoops,
-    slug,
-}: {
-    boops: number;
-    slug: string;
-}) {
-    const { userBoops, incrementBoops, totalBoops, isMaxed } = useBoops(
-        slug,
-        previousBoops,
-    );
+export function ActionsBar({ slug }: { slug: string }) {
+    const { userBoops, incrementBoops, totalBoops, isMaxed } = useBoops(slug);
 
     const [boopMessage, setBoopMessage] = useState<string | null>(null);
     const [linkMessage, setLinkMessage] = useState<string | null>(null);

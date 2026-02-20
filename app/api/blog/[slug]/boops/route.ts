@@ -1,6 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server';
 import supabase from '@/utils/supabase/admin';
 
+export async function GET(
+    _req: NextRequest,
+    { params }: { params: Promise<{ slug: string }> },
+) {
+    try {
+        const { slug } = await params;
+        const decodedSlug = decodeURIComponent(slug);
+
+        const { data, error } = await supabase
+            .from('articles')
+            .select('likes')
+            .eq('id', decodedSlug)
+            .maybeSingle();
+
+        if (error) {
+            throw error;
+        }
+
+        return NextResponse.json({ boops: data?.likes || 0 });
+    } catch (error) {
+        return NextResponse.json(
+            { error: 'Error fetching boops at this time' },
+            { status: 500 },
+        );
+    }
+}
+
 export async function PATCH(
     req: NextRequest,
     { params }: { params: Promise<{ slug: string }> },
