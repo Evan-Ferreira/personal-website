@@ -1,13 +1,15 @@
 'use client';
 
 import { useBoops } from '@/app/hooks/use-boops';
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const FILL_PER_CLICK = 20;
 
 export function ActionsBar({ slug }: { slug: string }) {
-    const { userBoops, incrementBoops, totalBoops, isMaxed } = useBoops(slug);
+    const { userBoops, incrementBoops, totalBoops, isMaxed, isLoading } =
+        useBoops(slug);
+
     const [boopMessage, setBoopMessage] = useState<string | null>(null);
     const [linkMessage, setLinkMessage] = useState<string | null>(null);
 
@@ -42,36 +44,81 @@ export function ActionsBar({ slug }: { slug: string }) {
     return (
         <div className="flex items-center justify-between gap-4 w-full border-t border-b border-border py-2 relative">
             <div className="flex items-center gap-2">
-                <button
-                    type="button"
-                    onClick={handleBoop}
-                    className="relative flex items-center justify-center w-8 h-8 transition-all hover:cursor-pointer
+                {isLoading ? (
+                    <>
+                        <svg
+                            width="0"
+                            height="0"
+                            className="absolute"
+                            aria-hidden="true"
+                        >
+                            <defs>
+                                <filter id="unicorn-outline">
+                                    <feFlood
+                                        floodColor="#6b7280"
+                                        floodOpacity="0.35"
+                                        result="color"
+                                    />
+                                    <feComposite
+                                        operator="in"
+                                        in="color"
+                                        in2="SourceAlpha"
+                                    />
+                                </filter>
+                            </defs>
+                        </svg>
+                        <div className="flex items-center justify-center w-8 h-8">
+                            <img
+                                src="/unicorn.svg"
+                                alt=""
+                                width={24}
+                                height={24}
+                                className="w-6 h-6 animate-pulse"
+                                style={{ filter: 'url(#unicorn-outline)' }}
+                                aria-hidden
+                            />
+                        </div>
+                        <p className="text-fg-tertiary text-sm flex items-center gap-1">
+                            <span className="inline-block w-5 h-4 rounded bg-[#6b7280]/35 animate-pulse" />{' '}
+                            Boops
+                        </p>
+                    </>
+                ) : (
+                    <>
+                        <button
+                            type="button"
+                            onClick={handleBoop}
+                            className="relative flex items-center justify-center w-8 h-8 transition-all hover:cursor-pointer
                     active:scale-110 duration-200 ease-in-out"
-                    aria-label="Like"
-                >
-                    <span className="block w-6 h-6 relative">
-                        <img
-                            src="/unicorn.svg"
-                            alt=""
-                            width={24}
-                            height={24}
-                            className="absolute inset-0 w-full h-full grayscale"
-                            aria-hidden
-                        />
-                        <img
-                            src="/unicorn.svg"
-                            alt=""
-                            width={24}
-                            height={24}
-                            className="absolute inset-0 w-full h-full transition-[clip-path] duration-300 ease-out"
-                            style={{
-                                clipPath: `inset(${100 - FILL_PER_CLICK * userBoops}% 0 0 0)`,
-                            }}
-                            aria-hidden
-                        />
-                    </span>
-                </button>
-                <p className="text-fg-tertiary text-sm ">{totalBoops} Boops</p>
+                            aria-label="Like"
+                        >
+                            <span className="block w-6 h-6 relative">
+                                <img
+                                    src="/unicorn.svg"
+                                    alt=""
+                                    width={24}
+                                    height={24}
+                                    className="absolute inset-0 w-full h-full grayscale"
+                                    aria-hidden
+                                />
+                                <img
+                                    src="/unicorn.svg"
+                                    alt=""
+                                    width={24}
+                                    height={24}
+                                    className="absolute inset-0 w-full h-full transition-[clip-path] duration-300 ease-out"
+                                    style={{
+                                        clipPath: `inset(${100 - FILL_PER_CLICK * userBoops}% 0 0 0)`,
+                                    }}
+                                    aria-hidden
+                                />
+                            </span>
+                        </button>
+                        <p className="text-fg-tertiary text-sm ">
+                            {totalBoops} Boops
+                        </p>
+                    </>
+                )}
             </div>
             <button
                 type="button"
