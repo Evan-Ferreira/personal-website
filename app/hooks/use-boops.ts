@@ -8,13 +8,15 @@ export const MAX_BOOPS = 5;
 export function useBoops(slug: string) {
     const [totalBoops, setTotalBoops] = useState(0);
     const [isMaxed, setIsMaxed] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+
     const userBoopsRef = useRef(0);
 
     useEffect(() => {
         userBoopsRef.current = 0;
         setIsMaxed(false);
         setTotalBoops(0);
-
+        setIsLoading(true);
         (async () => {
             const stored = localStorage.getItem(STORAGE_KEY(slug));
 
@@ -41,6 +43,8 @@ export function useBoops(slug: string) {
                 setTotalBoops(boops);
             } catch (error) {
                 console.error('Error fetching boops');
+            } finally {
+                setIsLoading(false);
             }
         })();
     }, [slug]);
@@ -91,5 +95,6 @@ export function useBoops(slug: string) {
         userBoops: userBoopsRef.current,
         incrementBoops,
         isMaxed,
+        isLoading,
     };
 }
