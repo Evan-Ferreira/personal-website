@@ -9,8 +9,8 @@ export async function getPostFrontmatter(slug: string) {
     const subtitle = frontmatter.subtitle;
     const date = frontmatter.date;
     const visibility = frontmatter.visibility;
-
-    return { title, subtitle, date, visibility };
+    const priority = frontmatter.priority || Infinity;
+    return { title, subtitle, date, visibility, priority };
 }
 
 export async function getAllPostsFrontmatter() {

@@ -32,6 +32,7 @@ export default async function Blog() {
                         }
                         return false;
                     })
+                    .sort((a, b) => a.priority - b.priority)
                     .map((post) => (
                         <Post
                             key={post.slug}

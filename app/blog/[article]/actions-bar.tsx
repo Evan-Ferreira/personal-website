@@ -8,9 +8,9 @@ const FILL_PER_CLICK = 20;
 
 export function ActionsBar({ slug }: { slug: string }) {
     const { userBoops, incrementBoops, totalBoops, isMaxed } = useBoops(slug);
-
     const [boopMessage, setBoopMessage] = useState<string | null>(null);
     const [linkMessage, setLinkMessage] = useState<string | null>(null);
+
     const boopTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const linkTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
