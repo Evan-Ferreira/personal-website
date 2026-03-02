@@ -1,19 +1,7 @@
 import { Header } from '@/app/blog/header';
-import { Metadata } from 'next';
 import { getAllPostsFrontmatter } from '@/utils/posts';
 import { Post } from '@/app/blog/article';
 import { Footer } from '@/app/blog/footer';
-
-export const metadata: Metadata = {
-    metadataBase: new URL('https://www.evanferreira.com'),
-    title: 'Evan Ferreira - Writing',
-    description: 'Software, philosophy, physics and everything in between',
-};
-
-export type MetadataProps = {
-    params: { slug: string };
-    searchParams: { [key: string]: string | string[] | undefined };
-};
 
 export default async function Blog() {
     const posts = await getAllPostsFrontmatter();
