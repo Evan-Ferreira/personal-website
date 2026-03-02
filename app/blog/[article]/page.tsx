@@ -18,6 +18,7 @@ export function generateStaticParams() {
     return [
         { article: 'my-bookshelf' },
         { article: 'how-to-write-cold-emails' },
+        { article: 'my-favourite-quotes' },
     ];
 }
 
