@@ -2,6 +2,27 @@ import { Header } from '@/app/sections/header';
 import { Experience as ExperienceSection } from '@/app/sections/experience';
 import { Projects as ProjectsSection } from '@/app/sections/projects';
 import { Footer } from '@/app/sections/footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: {
+        default: 'Evan Ferreira',
+        template: '%s | Evan Ferreira',
+    },
+    description:
+        'Business student passionate about software, startups, and side quests.',
+    metadataBase: new URL('https://www.evanferreira.com'),
+    openGraph: {
+        url: 'https://www.evanferreira.com',
+        siteName: 'Evan Ferreira',
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        creator: '@evanjfer',
+    },
+};
 
 export default async function Home() {
     return (

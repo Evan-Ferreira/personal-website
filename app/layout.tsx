@@ -11,12 +11,6 @@ const geistMono = Geist_Mono({
     subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-    title: 'Evan Ferreira',
-    description:
-        'Business student passionate about software, startups, and side quests.',
-};
-
 export default function RootLayout({
     children,
 }: Readonly<{
