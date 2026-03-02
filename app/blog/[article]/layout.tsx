@@ -1,21 +1,25 @@
-import type { Metadata } from 'next';
+import type { Metadata, ResolvingMetadata } from 'next';
 import { getPostFrontmatter } from '@/utils/posts';
 import { notFound } from 'next/navigation';
 import { Header } from '@/app/blog/[article]/header';
 import { Footer } from '@/app/blog/footer';
 import { ActionsBar } from '@/app/blog/[article]/actions-bar';
 
-export async function generateMetadata({
-    params,
-}: {
+type Props = {
     params: Promise<{ article: string }>;
-}): Promise<Metadata> {
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { article } = await params;
     const { title, subtitle } = await getPostFrontmatter(article);
-
     return {
         title: `${title} | Evan Ferreira`,
         description: subtitle,
+        openGraph: {
+            url: `/blog/${article}`,
+            type: 'article',
+        },
     };
 }
 

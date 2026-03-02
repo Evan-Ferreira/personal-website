@@ -11,6 +11,26 @@ const geistMono = Geist_Mono({
     subsets: ['latin'],
 });
 
+export const metadata: Metadata = {
+    title: {
+        default: 'Evan Ferreira',
+        template: '%s | Evan Ferreira',
+    },
+    description:
+        'Business student passionate about software, startups, and side quests.',
+    metadataBase: new URL('https://www.evanferreira.com'),
+    openGraph: {
+        url: 'https://www.evanferreira.com',
+        siteName: 'Evan Ferreira',
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        creator: '@evanjfer',
+    },
+};
+
 export default function RootLayout({
     children,
 }: Readonly<{
