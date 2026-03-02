@@ -18,20 +18,20 @@ export function useBoops(slug: string) {
         setTotalBoops(0);
         setIsLoading(true);
         (async () => {
-            const stored = localStorage.getItem(STORAGE_KEY(slug));
-
-            if (stored) {
-                const parsed = parseInt(stored, 10);
-                if (!isNaN(parsed) && parsed <= MAX_BOOPS) {
-                    userBoopsRef.current = parsed;
-                    setIsMaxed(parsed >= MAX_BOOPS);
-                }
-            } else {
-                localStorage.setItem(STORAGE_KEY(slug), String(0));
-                setIsMaxed(false);
-            }
-
             try {
+                const stored = localStorage.getItem(STORAGE_KEY(slug));
+
+                if (stored) {
+                    const parsed = parseInt(stored, 10);
+                    if (!isNaN(parsed) && parsed <= MAX_BOOPS) {
+                        userBoopsRef.current = parsed;
+                        setIsMaxed(parsed >= MAX_BOOPS);
+                    }
+                } else {
+                    localStorage.setItem(STORAGE_KEY(slug), String(0));
+                    setIsMaxed(false);
+                }
+
                 const res = await fetch(
                     `/api/blog/${encodeURIComponent(slug)}/boops`,
                 );
