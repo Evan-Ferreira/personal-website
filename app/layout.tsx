@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { Navbar } from '@/components/navbar';
 import QueryProvider from '@/app/providers/query';
 import VisitorProvider from '@/app/providers/visitor';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistMono = Geist_Mono({
     variable: '--font-geist-mono',
@@ -45,6 +46,7 @@ export default function RootLayout({
                     <VisitorProvider>{children}</VisitorProvider>
                 </QueryProvider>
                 <Navbar />
+                <SpeedInsights />
                 <Analytics />
             </body>
         </html>
