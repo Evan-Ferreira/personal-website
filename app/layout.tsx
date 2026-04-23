@@ -1,16 +1,19 @@
 import type { Metadata } from 'next';
-import { Geist_Mono } from 'next/font/google';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+import {
+    GeistPixelSquare,
+    GeistPixelGrid,
+    GeistPixelCircle,
+    GeistPixelTriangle,
+    GeistPixelLine,
+} from 'geist/font/pixel';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { Navbar } from '@/components/navbar';
 import QueryProvider from '@/app/providers/query';
 import VisitorProvider from '@/app/providers/visitor';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-
-const geistMono = Geist_Mono({
-    variable: '--font-geist-mono',
-    subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
     title: {
@@ -40,7 +43,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`bg-grid ${geistMono.variable} antialiased min-h-screen flex flex-col relative`}
+                className={`${GeistSans.variable} antialiased min-h-screen flex flex-col relative`}
             >
                 <QueryProvider>
                     <VisitorProvider>{children}</VisitorProvider>

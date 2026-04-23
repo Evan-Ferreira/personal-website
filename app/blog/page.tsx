@@ -6,7 +6,7 @@ import { Footer } from '@/app/blog/footer';
 export default async function Blog() {
     const posts = await getAllPostsFrontmatter();
     return (
-        <main className="font-mono flex items-center flex-col lg:py-8 py-4 px-4 h-full min-h-screen">
+        <main className="flex items-center flex-col lg:py-8 py-4 px-4 h-full min-h-screen">
             <Header />
             <section className="flex flex-col gap-3 max-w-2xl w-full">
                 <h2 className="text-xs text-fg-tertiary mt-6">WRITING</h2>
