@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-type ImageInfo = {
+export type ImageInfo = {
     src: string;
     alt: string;
 };
