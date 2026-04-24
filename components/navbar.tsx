@@ -17,7 +17,7 @@ export function Navbar() {
                 Home
             </Link>
             <Link
-                href="/blog"
+                href="/projects"
                 className={`text-fg-secondary hover:text-fg-tertiary transition-all ease-in-out duration-300 ${
                     pathname.includes('/projects') ? 'text-fg-primary' : ''
                 }`}

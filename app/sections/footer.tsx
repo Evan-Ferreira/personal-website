@@ -21,6 +21,23 @@ export function Footer() {
             </div>
             <div className="flex gap-2 items-center">
                 <a
+                    href="mailto:evanjfer@gmail.com"
+                    className="flex items-center justify-center"
+                >
+                    <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M18.3335 3.66666H3.66683C2.6585 3.66666 1.84266 4.49166 1.84266 5.49999L1.8335 16.5C1.8335 17.5083 2.6585 18.3333 3.66683 18.3333H18.3335C19.3418 18.3333 20.1668 17.5083 20.1668 16.5V5.49999C20.1668 4.49166 19.3418 3.66666 18.3335 3.66666ZM18.3335 7.33332L11.0002 11.9167L3.66683 7.33332V5.49999L11.0002 10.0833L18.3335 5.49999V7.33332Z"
+                            fill="#B3B3B3"
+                        />
+                    </svg>
+                </a>
+                <a
                     href="https://github.com/Evan-Ferreira"
                     className="flex items-center justify-center"
                 >

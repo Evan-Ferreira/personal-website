@@ -6,6 +6,7 @@ import { Navbar } from '@/components/navbar';
 import QueryProvider from '@/app/providers/query';
 import VisitorProvider from '@/app/providers/visitor';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Footer } from '@/app/sections/footer';
 
 export const metadata: Metadata = {
     title: {
@@ -41,6 +42,7 @@ export default function RootLayout({
                 <QueryProvider>
                     <VisitorProvider>{children}</VisitorProvider>
                 </QueryProvider>
+                <Footer />
                 <SpeedInsights />
                 <Analytics />
             </body>

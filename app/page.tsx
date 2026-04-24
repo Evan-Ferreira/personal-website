@@ -44,7 +44,6 @@ export default async function Home() {
                 <li>inQUbate</li>
                 <li>Stumble</li>
             </ul>
-            <Footer />
         </main>
     );
 }
