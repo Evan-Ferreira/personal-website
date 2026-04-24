@@ -1,9 +1,8 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 import { getPostFrontmatter } from '@/utils/posts';
 import { notFound } from 'next/navigation';
-import { Header } from '@/app/blog/[article]/header';
-import { Footer } from '@/app/blog/footer';
-import { ActionsBar } from '@/app/blog/[article]/actions-bar';
+import { ActionsBar } from '@/app/writing/[article]/actions-bar';
+import { instrumentSerif } from '@/app/page';
 
 type Props = {
     params: Promise<{ article: string }>;
@@ -17,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: `${title} | Evan Ferreira`,
         description: subtitle,
         openGraph: {
-            url: `/blog/${article}`,
+            url: `/writing/${article}`,
             type: 'article',
         },
     };
@@ -39,13 +38,19 @@ export default async function Layout({
     }
 
     return (
-        <article className="flex flex-col items-center gap-8 text-left px-4 lg:py-8 py-4 min-h-screen h-full max-w-2xl mx-auto">
-            <Header title={title} subtitle={subtitle} />
-            <ActionsBar slug={slug} />
-            <section className="text-sm leading-relaxed -mt-10">
-                {children}
-            </section>
-            <Footer />
+        <article className="flex flex-col min-h-screen h-full mx-auto">
+            <header className="flex flex-col gap-1 w-full mt-2">
+                <h1
+                    className={`${instrumentSerif.className} text-4xl text-fg-primary leading-none tracking-wider transition-all duration-300`}
+                >
+                    {title}
+                </h1>
+                <div className="flex justify-between w-full items-center">
+                    <h3 className="text-fg-secondary">{subtitle}</h3>
+                    <ActionsBar slug={slug} />
+                </div>
+            </header>
+            <section>{children}</section>
         </article>
     );
 }

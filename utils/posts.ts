@@ -2,7 +2,7 @@ import { readdir } from 'fs/promises';
 import { join } from 'path';
 
 export async function getPostFrontmatter(slug: string) {
-    const mdxFile = await import(`@/app/blog/posts/${slug}.mdx`);
+    const mdxFile = await import(`@/app/writing/posts/${slug}.mdx`);
 
     const frontmatter = mdxFile.frontmatter || {};
     const title = frontmatter.title;
@@ -14,7 +14,7 @@ export async function getPostFrontmatter(slug: string) {
 }
 
 export async function getAllPostsFrontmatter() {
-    const postsDirectory = join(process.cwd(), 'app/blog/posts');
+    const postsDirectory = join(process.cwd(), 'app/writing/posts');
     const files = await readdir(postsDirectory);
 
     const mdxFiles = files.filter((file) => file.endsWith('.mdx'));

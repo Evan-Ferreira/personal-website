@@ -33,7 +33,7 @@ export function useBoops(slug: string) {
                 }
 
                 const res = await fetch(
-                    `/api/blog/${encodeURIComponent(slug)}/boops`,
+                    `/api/writing/${encodeURIComponent(slug)}/boops`,
                 );
                 if (!res.ok) {
                     throw new Error('Error fetching boops');
@@ -71,7 +71,7 @@ export function useBoops(slug: string) {
             localStorage.setItem(STORAGE_KEY(slug), String(next));
 
             const res = await fetch(
-                `/api/blog/${encodeURIComponent(slug)}/boops`,
+                `/api/writing/${encodeURIComponent(slug)}/boops`,
                 {
                     method: 'PATCH',
                     body: JSON.stringify({ increment_amount: 1 }),

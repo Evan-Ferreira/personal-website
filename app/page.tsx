@@ -1,9 +1,6 @@
-import { Experience as ExperienceSection } from '@/app/sections/experience';
-import { Projects as ProjectsSection } from '@/app/sections/projects';
-import { Footer } from '@/app/sections/footer';
 import { Instrument_Serif } from 'next/font/google';
 
-const instrumentSerif = Instrument_Serif({
+export const instrumentSerif = Instrument_Serif({
     weight: '400',
     subsets: ['latin'],
     style: 'italic',

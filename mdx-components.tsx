@@ -3,14 +3,14 @@ import type { MDXComponents } from 'mdx/types';
 const components: MDXComponents = {
     // Style unordered lists
     ul: ({ children, ...props }) => (
-        <ul className="list-disc list-inside ml-4 space-y-1 my-6" {...props}>
+        <ul className="list-disc list-inside ml-4 space-y-1 my-4" {...props}>
             {children}
         </ul>
     ),
 
     // Style ordered lists
     ol: ({ children, ...props }) => (
-        <ol className="list-decimal list-inside ml-4 space-y-1 my-6" {...props}>
+        <ol className="list-decimal list-inside ml-4 space-y-1 my-4" {...props}>
             {children}
         </ol>
     ),
@@ -25,7 +25,7 @@ const components: MDXComponents = {
     // Style headings
     h1: ({ children, ...props }) => (
         <h1
-            className="mt-10 -mb-2 lg:text-base text-sm/7 text-fg-tertiary"
+            className="mt-8 lg:text-base text-sm/7 text-fg-secondary"
             {...props}
         >
             {children}
@@ -33,17 +33,14 @@ const components: MDXComponents = {
     ),
 
     h2: ({ children, ...props }) => (
-        <h2
-            className="mt-8 -mb-2 lg:text-sm text-xs/7 text-fg-tertiary"
-            {...props}
-        >
+        <h2 className="mt-6 lg:text-sm text-xs/7 text-fg-secondary" {...props}>
             {children}
         </h2>
     ),
 
     // Style paragraphs
     p: ({ children, ...props }) => (
-        <p className="my-6 lg:text-base/7 text-sm/7 font-light" {...props}>
+        <p className="my-4 lg:text-base/7 text-sm/7 font-light" {...props}>
             {children}
         </p>
     ),
@@ -58,7 +55,7 @@ const components: MDXComponents = {
     // Style blockquotes
     blockquote: ({ children, ...props }) => (
         <blockquote
-            className="border-l-3 border-gray-300 pl-3 my-3 italic text-sm"
+            className="border-l-3 border-gray-300 pl-3 my-4 italic text-sm"
             {...props}
         >
             {children}
