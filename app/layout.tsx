@@ -1,13 +1,5 @@
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
-import {
-    GeistPixelSquare,
-    GeistPixelGrid,
-    GeistPixelCircle,
-    GeistPixelTriangle,
-    GeistPixelLine,
-} from 'geist/font/pixel';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { Navbar } from '@/components/navbar';
@@ -43,12 +35,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${GeistSans.variable} antialiased min-h-screen flex flex-col relative`}
+                className={`${GeistSans.className} text-fg-primary text-base font-light px-96 py-16 min-h-screen flex flex-col relative`}
             >
+                <Navbar />
                 <QueryProvider>
                     <VisitorProvider>{children}</VisitorProvider>
                 </QueryProvider>
-                <Navbar />
                 <SpeedInsights />
                 <Analytics />
             </body>

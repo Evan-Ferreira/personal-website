@@ -7,25 +7,38 @@ export function Navbar() {
     const pathname = usePathname();
 
     return (
-        <div
-            className="text-fg-primary text-xs flex items-center bottom-8 left-1/2 -translate-x-1/2 \
-        bento-navbar w-fit py-3 px-4"
-        >
+        <div className="flex items-center gap-8">
             <Link
                 href="/"
-                className={`mx-3 px-1 w-fit hover:text-fg-tertiary transition-all ease-in-out duration-300 ${
-                    pathname === '/' ? 'nav-link-active' : ''
+                className={`text-fg-secondary hover:text-fg-tertiary transition-all ease-in-out duration-300 ${
+                    pathname === '/' ? 'text-fg-primary' : ''
                 }`}
             >
-                HOME
+                Home
             </Link>
             <Link
                 href="/blog"
-                className={`mx-3 px-1 text-xs hover:text-fg-tertiary transition-all ease-in-out duration-300 ${
-                    pathname.includes('/blog') ? 'nav-link-active' : ''
+                className={`text-fg-secondary hover:text-fg-tertiary transition-all ease-in-out duration-300 ${
+                    pathname.includes('/projects') ? 'text-fg-primary' : ''
                 }`}
             >
-                BLOG
+                Projects
+            </Link>
+            <Link
+                href="/writing"
+                className={`text-fg-secondary hover:text-fg-tertiary transition-all ease-in-out duration-300 ${
+                    pathname.includes('/projects') ? 'text-fg-primary' : ''
+                }`}
+            >
+                Writing
+            </Link>
+            <Link
+                href="/life"
+                className={`text-fg-secondary hover:text-fg-tertiary transition-all ease-in-out duration-300 ${
+                    pathname.includes('/projects') ? 'text-fg-primary' : ''
+                }`}
+            >
+                Life
             </Link>
         </div>
     );
