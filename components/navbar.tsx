@@ -7,7 +7,7 @@ export function Navbar() {
     const pathname = usePathname();
 
     return (
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-8 mb-4">
             <Link
                 href="/"
                 className={`text-fg-secondary hover:text-fg-tertiary transition-all ease-in-out duration-300 ${

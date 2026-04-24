@@ -35,7 +35,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${GeistSans.className} text-fg-primary text-base font-light px-96 py-16 min-h-screen flex flex-col relative`}
+                className={`${GeistSans.className} text-fg-primary text-base font-light lg:px-96 px-3 lg:py-16 py-4 gap-4 min-h-screen flex flex-col`}
             >
                 <Navbar />
                 <QueryProvider>
