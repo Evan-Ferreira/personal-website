@@ -6,7 +6,7 @@ import { Navbar } from '@/components/navbar';
 import QueryProvider from '@/app/providers/query';
 import VisitorProvider from '@/app/providers/visitor';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Footer } from '@/app/sections/footer';
+import { Footer } from '@/components/footer';
 
 export const metadata: Metadata = {
     title: {

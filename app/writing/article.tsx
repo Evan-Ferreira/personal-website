@@ -1,4 +1,3 @@
-import { Badge } from '@/components/badge';
 import Link from 'next/link';
 
 export function Post({
@@ -6,13 +5,11 @@ export function Post({
     slug,
     subtitle,
     date,
-    badges,
 }: {
     title: string;
     slug: string;
     subtitle: string;
     date: string;
-    badges?: string[];
 }) {
     return (
         <Link
