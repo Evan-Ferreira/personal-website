@@ -1,46 +1,98 @@
-import { Badge } from '@/components/badge';
-import { TechBadge } from '@/components/tech-badge';
+import Image from 'next/image';
+
+export type ImageInfo = {
+    src: string;
+    alt: string;
+};
 
 export function Project({
-    badges,
-    technologies,
-    name,
+    title,
     description,
-    link,
+    date,
+    imageInfo,
+    otherLink,
+    githubLink,
 }: {
-    badges: string[];
-    technologies: string[];
-    name: string;
+    title: string;
     description: string;
-    link: string;
+    date: string;
+    imageInfo: ImageInfo;
+    otherLink?: string;
+    githubLink?: string;
 }) {
     return (
-        <a
-            href={link}
-            className="bento-card flex flex-col gap-2 relative group h-41"
-        >
-            <p className="text-xs min-w-64">{name}</p>
-            <p
-                className="text-xs text-fg-tertiary absolute right-[16px] top-[16px] 
-                    group-hover:text-accent duration-300 transition-all ease-in-out"
-            >
-                →
-            </p>
-            <div className="flex gap-2">
-                {badges.map((badge) => (
-                    <Badge key={badge} color="orange" className="uppercase">
-                        {badge}
-                    </Badge>
-                ))}
+        <div className="w-full relative min-h-72 flex flex-col gap-2">
+            <div className="object-hidden h-64  relative">
+                <Image
+                    src={imageInfo.src}
+                    alt={imageInfo.alt}
+                    fill
+                    className="object-cover"
+                />
             </div>
-            <p className="text-fg-tertiary lg:text-xs min-h-12 text-[10px]">
-                {description}
-            </p>
-            <div className="flex gap-1">
-                {technologies.map((tech) => (
-                    <TechBadge key={tech}>{tech}</TechBadge>
-                ))}
+            <div className="flex flex-col gap-1">
+                <div className="flex justify-between">
+                    <h3>
+                        {title}
+                        <span className="text-fg-secondary">
+                            {''} – {date}
+                        </span>
+                    </h3>
+                    <div className="flex gap-1">
+                        {otherLink && (
+                            <a
+                                href={otherLink}
+                                className="flex items-center justify-center"
+                            >
+                                <svg
+                                    width="19"
+                                    height="19"
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="text-fg-tertiary hover:text-fg-secondary transition-all ease-in-out duration-150"
+                                >
+                                    <g clipPath="url(#clip0_2031_156)">
+                                        <path
+                                            fillRule="evenodd"
+                                            clipRule="evenodd"
+                                            fill="currentColor"
+                                            d="M5.464 2.104C4.21959 2.64135 3.17633 3.55747 2.48267 4.722H4.47967C4.63633 4.028 4.843 3.39 5.09167 2.82967C5.20157 2.58075 5.32589 2.33845 5.464 2.104ZM1.58333 8C1.58333 7.50333 1.64 7.01967 1.74667 6.55533H4.19533C4.15213 7.03567 4.13066 7.51772 4.131 8C4.131 8.492 4.15267 8.975 4.19533 9.444H1.74633C1.63764 8.97037 1.58296 8.48594 1.58333 8ZM2.48233 11.2773C3.17598 12.4422 4.21937 13.3585 5.464 13.896C5.32589 13.6616 5.20157 13.4193 5.09167 13.1703C4.84267 12.61 4.63633 11.9717 4.47967 11.2773H2.48233ZM6.19533 11.2773C6.30288 11.6932 6.44321 12.0999 6.615 12.4937C6.86133 13.0483 7.133 13.4453 7.393 13.6927C7.64833 13.936 7.852 14 7.99967 14C8.14733 14 8.35133 13.936 8.607 13.6927C8.86667 13.4453 9.13867 13.0483 9.385 12.4937C9.544 12.1353 9.68567 11.727 9.80467 11.2773H6.19533ZM11.5203 11.2773C11.3637 11.9717 11.157 12.61 10.908 13.1703C10.7981 13.4193 10.6738 13.6616 10.5357 13.896C11.7804 13.3586 12.8239 12.4422 13.5177 11.2773H11.5203ZM14.2537 9.444H11.8047C11.8479 8.96388 11.8693 8.48206 11.869 8C11.869 7.50767 11.847 7.02467 11.8047 6.55533H14.2533C14.36 7.01967 14.4167 7.50333 14.4167 8C14.4167 8.49667 14.36 8.98 14.2533 9.444M10.13 9.444H5.86933C5.82117 8.96418 5.79725 8.48223 5.79767 8C5.79767 7.5 5.82267 7.01667 5.86967 6.55533H10.13C10.1767 7.01667 10.202 7.50033 10.202 8C10.202 8.49967 10.177 8.98267 10.13 9.444ZM11.52 4.722H13.517C12.8232 3.55742 11.7799 2.6413 10.5353 2.104C10.6707 2.332 10.7947 2.57567 10.9077 2.82967C11.1567 3.38967 11.363 4.028 11.5197 4.722M6.61433 3.50633C6.44258 3.89984 6.30225 4.30634 6.19467 4.722H9.80367C9.69619 4.30635 9.55598 3.89985 9.38433 3.50633C9.13767 2.95167 8.866 2.55467 8.60633 2.30733C8.35133 2.064 8.14767 2 8 2C7.85233 2 7.64833 2.064 7.393 2.30733C7.133 2.55467 6.86133 2.95167 6.615 3.50633M8 0.25C3.72 0.25 0.25 3.72 0.25 8C0.25 12.28 3.72 15.75 8 15.75C12.28 15.75 15.75 12.28 15.75 8C15.75 3.72 12.28 0.25 8 0.25Z"
+                                        />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_2031_156">
+                                            <rect
+                                                width="16"
+                                                height="16"
+                                                fill="white"
+                                            />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        )}
+                        {githubLink && (
+                            <a
+                                href="https://github.com/Evan-Ferreira"
+                                className="flex items-center justify-center hover:text-fg-secondary transition-all ease-in-out duration-150"
+                            >
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 22 22"
+                                    fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="inline text-fg-tertiary transition-all duration-100 hover:text-fg-secondary"
+                                >
+                                    <path d="M11.0759 0.5C6.04592 0.499354 1.75807 4.14728 0.952733 9.11239C0.147393 14.0775 3.06236 18.8937 7.83468 20.483C8.34867 20.5755 8.53268 20.2599 8.53268 19.9885C8.53268 19.7449 8.52446 19.0993 8.52138 18.241C5.66872 18.8578 5.06632 16.8655 5.06632 16.8655C4.87852 16.2456 4.47479 15.7135 3.92834 15.3657C3.00315 14.7294 3.99927 14.7438 3.99927 14.7438C4.65788 14.8341 5.23753 15.2243 5.569 15.8005C5.84958 16.3107 6.32227 16.6876 6.88205 16.8477C7.44184 17.0077 8.04235 16.9375 8.55016 16.6527C8.59788 16.1326 8.8293 15.6464 9.20293 15.2814C6.92697 15.0234 4.53382 14.1434 4.53382 10.2134C4.52119 9.19696 4.89865 8.2143 5.58853 7.46768C5.27639 6.58291 5.31315 5.61243 5.69133 4.7538C5.69133 4.7538 6.55176 4.47727 8.51007 5.80338C10.1896 5.34285 11.9622 5.34285 13.6418 5.80338C15.6011 4.47625 16.4605 4.7538 16.4605 4.7538C16.8404 5.61202 16.8772 6.58318 16.5633 7.46768C17.2557 8.21424 17.6329 9.19947 17.616 10.2175C17.616 14.1578 15.2208 15.0234 12.9366 15.2773C13.4293 15.7811 13.682 16.4722 13.6305 17.1749C13.6305 18.5463 13.6181 19.6524 13.6181 19.9885C13.6181 20.263 13.8011 20.5817 14.3244 20.4809C19.0947 18.889 22.0065 14.0725 21.1995 9.10867C20.3925 4.14488 16.1049 0.49885 11.0759 0.5Z"></path>
+                                </svg>
+                            </a>
+                        )}
+                    </div>
+                </div>
+                <p className="text-fg-secondary">{description}</p>
             </div>
-        </a>
+        </div>
     );
 }
