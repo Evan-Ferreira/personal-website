@@ -4,7 +4,7 @@ import { Post } from '@/app/writing/article';
 export default async function Writing() {
     const posts = await getAllPostsFrontmatter();
     return (
-        <main className="flex items-center flex-col h-full min-h-screen">
+        <main className="flex items-center flex-col">
             {posts
                 ?.filter((post) => {
                     if (

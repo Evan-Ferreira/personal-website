@@ -2,34 +2,36 @@ import { Project } from '@/components/project';
 
 const projects = [
     {
-        title: 'Local Reach',
-        description: 'AI Startup, acquired by Taiv (YC W20)',
+        title: 'JAJA',
+        description: '[IN PROGRESS] AI agents for university',
         date: '2026',
         imageInfo: {
-            src: '/pillexa.jpeg',
-            alt: 'Local Reach',
+            src: '/jaja.png',
+            alt: 'JAJA',
         },
-        otherLink: 'github',
+        githubLink: 'https://github.com/Evan-Ferreira/jaja',
     },
     {
-        title: 'Local Reach',
-        description: 'AI Startup, acquired by Taiv (YC W20)',
-        date: '2026',
+        title: 'Local Reach (Acquired)',
+        description:
+            'AI for restaurants & bars, replacing TV commercials with more targeted ads.',
+        date: '2024',
         imageInfo: {
-            src: '/pillexa.jpeg',
+            src: '/localreach.png',
             alt: 'Local Reach',
         },
-        otherLink: 'github',
+        otherLink:
+            'https://betakit.com/taiv-acquihires-fellow-canadian-adtech-startup-local-reach-to-aid-expansion-plans/',
     },
     {
-        title: 'Local Reach',
-        description: 'AI Startup, acquired by Taiv (YC W20)',
-        date: '2026',
+        title: 'Stumble',
+        description: 'Leetcode platform for dating.',
+        date: '2024',
         imageInfo: {
-            src: '/localreach.jpeg',
-            alt: 'Local Reach',
+            src: '/stumble.png',
+            alt: 'Stumble',
         },
-        otherLink: 'github',
+        githubLink: 'https://github.com/Evan-Ferreira/Stumble_HackTheHill2024',
     },
 ];
 
@@ -43,6 +45,8 @@ function ProjectsPage() {
                     description={p.description}
                     date={p.date}
                     imageInfo={p.imageInfo}
+                    otherLink={p.otherLink}
+                    githubLink={p.githubLink}
                 />
             ))}
         </div>

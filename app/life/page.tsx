@@ -1,51 +1,29 @@
-import { Memory } from '@/components/memory';
+import { Memory as MemoryComponent } from '@/components/memory';
+import type { ImageInfo } from '@/components/project';
 
-const memories = [
-    {
-        date: 'February 14, 2026',
-        description: 'The time I yeeted Joseph',
-        imageInfo: {
-            src: '/localreach.jpeg',
-            alt: 'yeet',
-        },
-    },
-    {
-        date: 'February 14, 2026',
-        description: 'The time I yeeted Joseph',
-        imageInfo: {
-            src: '/localreach.jpeg',
-            alt: 'yeet',
-        },
-    },
-    {
-        date: 'February 14, 2026',
-        description: 'The time I yeeted Joseph',
-        imageInfo: {
-            src: '/localreach.jpeg',
-            alt: 'yeet',
-        },
-    },
-    {
-        date: 'February 14, 2026',
-        description: 'The time I yeeted Joseph',
-        imageInfo: {
-            src: '/localreach.jpeg',
-            alt: 'yeet',
-        },
-    },
-];
+type Memory = {
+    date: string;
+    description: string;
+    imageInfo: ImageInfo;
+};
+
+const memories: Memory[] = [];
 
 function LifePage() {
     return (
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 h-full">
-            {memories.map((m, i) => (
-                <Memory
-                    key={i}
-                    description={m.description}
-                    date={m.date}
-                    imageInfo={m.imageInfo}
-                />
-            ))}
+            {memories.length > 0 ? (
+                memories.map((m, i) => (
+                    <MemoryComponent
+                        key={i}
+                        description={m.description}
+                        date={m.date}
+                        imageInfo={m.imageInfo}
+                    />
+                ))
+            ) : (
+                <p className="text-fg-secondary">Coming soon...</p>
+            )}
         </div>
     );
 }
