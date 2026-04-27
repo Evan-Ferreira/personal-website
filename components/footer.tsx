@@ -1,7 +1,7 @@
 export function Footer() {
     return (
-        <footer className="flex text-fg-tertiary justify-between w-full mt-4">
-            <div className="flex gap-1 group">
+        <footer className="flex text-fg-tertiary items-center justify-between w-full mt-4">
+            <div className="flex gap-1 group items-center">
                 <a
                     href="https://x.com/evanjfer"
                     className="flex justify-center items-center group-hover:group-hover:text-fg-secondary transition-all ease-in-out duration-150"
@@ -20,6 +20,25 @@ export function Footer() {
                 <p className="text-fg-tertiary underline group-hover:cursor-pointer group-hover:text-fg-secondary transition-all ease-in-out duration-150">
                     @evanjfer
                 </p>
+            </div>
+            <div className="flex items-center gap-2">
+                <a href="https://queensu-webring.ca/evanferreira.com?nav=prev">
+                    ←
+                </a>
+                <a
+                    href="https://queensu-webring.ca/evanferreira.com"
+                    target="_blank"
+                    className="inline-flex mt-1"
+                    aria-label="Queen's Computing Webring"
+                >
+                    <span
+                        className="block h-9 w-9 shrink-0 bg-fg-tertiary mask-[url('/qu-webring.svg')] mask-contain mask-no-repeat mask-center"
+                        aria-hidden
+                    />
+                </a>
+                <a href="https://queensu-webring.ca/evanferreira.com?nav=next">
+                    →
+                </a>
             </div>
             <div className="flex gap-2 items-center">
                 <a
