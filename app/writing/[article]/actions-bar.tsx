@@ -30,7 +30,7 @@ export function ActionsBar({ slug }: { slug: string }) {
     }, []);
 
     return (
-        <div className="flex items-center gap-2 w-32">
+        <div className="relative flex items-center gap-2 w-32">
             {isLoading ? (
                 <>
                     <svg
