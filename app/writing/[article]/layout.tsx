@@ -38,7 +38,7 @@ export default async function Layout({
     }
 
     return (
-        <article className="flex flex-col min-h-screen h-full mx-auto">
+        <article className="flex flex-col min-h-screen h-full">
             <header className="flex flex-col gap-1 w-full mt-2">
                 <h1
                     className={`${instrumentSerif.className} text-4xl text-fg-primary leading-none tracking-wider transition-all duration-300`}

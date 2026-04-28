@@ -22,11 +22,11 @@ export function Footer() {
                 </p>
             </div>
             <div className="flex items-center gap-2">
-                <a href="https://queensu-webring.ca/evanferreira.com?nav=prev">
+                <a href="https://queensu-webring.ca/#evanferreira.com?nav=prev">
                     ←
                 </a>
                 <a
-                    href="https://queensu-webring.ca/evanferreira.com"
+                    href="https://queensu-webring.ca/#evanferreira.com"
                     target="_blank"
                     className="inline-flex mt-1"
                     aria-label="Queen's Computing Webring"
@@ -36,7 +36,7 @@ export function Footer() {
                         aria-hidden
                     />
                 </a>
-                <a href="https://queensu-webring.ca/evanferreira.com?nav=next">
+                <a href="https://queensu-webring.ca/#evanferreira.com?nav=next">
                     →
                 </a>
             </div>
