@@ -17,4 +17,295 @@ export type LifePhoto = {
     alt: string;
 };
 
-export const photos: LifePhoto[] = [];
+export const photos: LifePhoto[] = [
+    {
+        "base": "/life/IMG_0012",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAQCdASoQAAwAA4BaJbACsAYvqjOKkAD8YwXvGrnQRsTFecqfUsT4wvCXjleqhhgsHxpH4ZngAMfs/j08WvmrBmdpRu2jWNcQyfe4IvtSUrOgQZiS8pOnFJL1iYjYq8oaAAAA",
+        "tags": [
+            "San Francisco",
+            "Cafe"
+        ],
+        "description": "Starbucks – Marina District",
+        "alt": "Starbucks – Marina District"
+    },
+    {
+        "base": "/life/IMG_0199",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoQAAwAA4BaJQBOgB4Qctw3+PwAAP7avzwOxnkanZdImylKO7+zpHAaM4aCk/Inds87y7Q/8BjYs4XgEKBct1Nw+iYqbtaM3yAAAA==",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "Underneath the Golden Gate Bridge, 50km Hike day with Arty",
+        "alt": "Underneath the Golden Gate Bridge, 50km Hike day with Arty"
+    },
+    {
+        "base": "/life/IMG_0219",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoQAAwAA4BaJZgCdGuAAtCTX3epAAD33I0XQkf70HqG5pLBw/ashnry2joT+TMasgp+9yFaO+QVz1199lAShjNwV4uKXJHE5QQGKAAA",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "50km Hike with Arty vlogging",
+        "alt": "50km Hike with Arty vlogging"
+    },
+    {
+        "base": "/life/IMG_0377",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAgCdASoQAAwAA4BaJZgCdAEX6AvwjFYEAAD+3aXCt1Jm/PlkCeOQsttCGErC2Fl6xPDvE83HpmxLNsT2oc/B5rh0i371bH7UUjutTtpa3eTxl5jbwfBtxjkiMwMaAAA=",
+        "tags": [
+            "San Francisco",
+            "Uber"
+        ],
+        "description": "Watching World Cup at the Chase Center with team",
+        "alt": "Watching World Cup at the Chase Center with team"
+    },
+    {
+        "base": "/life/IMG_0482",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAwAA4BaJbACdAEOpPDIcHgA+gdmDbw4bGKiMxFa0mrwjz0W0yh2Xtd9PK2+Qs3qKsRjVTrjPyLZbH9xuyZ41D5Z1WkAAAA=",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "Angel Island w/ Peter, Maanas, Jayden, and Jessie",
+        "alt": "Angel Island w/ Peter, Maanas, Jayden, and Jessie"
+    },
+    {
+        "base": "/life/IMG_0562",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAQCdASoQAAwAA4BaJaACdAYxFHV0E1AA+TNSFIdt7I3SMdvihUrk7DcnkfyuirfHofAbMm9uUhDFHS1huyCaVaUzDMbU8wul33N3SPaDx9W/iAwUE4M8BVvx4xXpMZzEe82cAAA=",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "1. Muir Woods with Audrey",
+        "alt": "1. Muir Woods with Audrey"
+    },
+    {
+        "base": "/life/IMG_0607",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAwAgCdASoQAAwAA4BaJYwCdAEXb0jBx/TG4AD+6XNUIdcOTE7ote5gInBOSritmxxz08zRTb59/S7uL3dNcjdU2OkoP2yuPNniF4AA",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "2. Muir Woods",
+        "alt": "2. Muir Woods"
+    },
+    {
+        "base": "/life/IMG_0619",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoQAAwAA4BaJZwC7ACjglBhiAD+vhCku+dtARdgXffWXEaDrVeWhdJvQjeprCrf+Kpv+07ljVY95Grx+DfZBA8UHN7o5++JMGYtHGwAAAA=",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "3. Muir Woods",
+        "alt": "3. Muir Woods"
+    },
+    {
+        "base": "/life/IMG_0632",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAwAA4BaJbACdAD6FOGkMQQA/u0JYxogWYja+pHrzILM4LixEeVQvx0HFr4N+1LbPcdMvLGyEuFJCkBblZ0GRwLPq0sM28LrmcIAAAA=",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "4. Muir Woods",
+        "alt": "4. Muir Woods"
+    },
+    {
+        "base": "/life/IMG_0697",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAQCdASoQAAwAA4BaJbACdAYuQxvdRCgA/s3zmBtOpLF31vR6fwtaiOl00JZFnI4sLvB4guUOgV0MRm72z9ccqrNKedYplEfTEvRH3iF0u61NTdcWhpfTwJv4XLIj5HN8RXd8QH7c6y5zv8v7bFNi+fhBMIAA",
+        "tags": [
+            "San Francisco",
+            "Uber"
+        ],
+        "description": "Fruit bowl",
+        "alt": "Fruit bowl"
+    },
+    {
+        "base": "/life/IMG_0717",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACQAQCdASoQAAwAA4BaJZQAApLRjcAA/u8RqulObuiVW9xTNs2FeNi3+rcrSW7g3vX+d5GvrdPWdJL2z5qvLoDg3+aupAeAAAA=",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "1. Mount Tam with Audrey, Dan, & Arty",
+        "alt": "1. Mount Tam with Audrey, Dan, & Arty"
+    },
+    {
+        "base": "/life/IMG_0729",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAwAA4BaJbACdAENWhyBs6AA+l2DBkIVLQ94BDDveuun3EdyPTaXRklceuVpjJk3hSXfdCkHX8Wy4d6O+oN57OPjZo4A",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "2. Mount Tam with Audrey, Dan, & Arty",
+        "alt": "2. Mount Tam with Audrey, Dan, & Arty"
+    },
+    {
+        "base": "/life/IMG_0735",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoQAAwAA4BaJbACdAENQtIAAP4hFLrUCrPDAWEkK5LecxhhVYlAvsC067f/hDpX0OI6/jMW/zf5Zkth2U6vfaGAAAA=",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "3. Mount Tam with Audrey, & Dan",
+        "alt": "3. Mount Tam with Audrey, & Dan"
+    },
+    {
+        "base": "/life/IMG_0750",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoQAAwAA4BaJbACdAENdeNL0AD9U7oi4WsZzh8zz8tw9dSN1Hx/OLflJxJmmVOrCd6Mpe71VvkSs2/nVsokAAAA",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "4. Mount Tam with Audrey, Dan, & Arty",
+        "alt": "4. Mount Tam with Audrey, Dan, & Arty"
+    },
+    {
+        "base": "/life/IMG_0759",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAQAgCdASoQAAwAA4BaJQBOgB9s23OZFm2wAP7N8CQIp10F5nYS2f2hwIhPQeVjrNP4NOlWKg88fxYuSKNAOzjRi3vMHw7uryk0J+cRjgyarEuI9zZrgPqC341fWHhngYfX7X8pRlQhENh3/i2AAA==",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "5. Mount Tam with Audrey, Dan, & Arty – suprise watermelon",
+        "alt": "5. Mount Tam with Audrey, Dan, & Arty – suprise watermelon"
+    },
+    {
+        "base": "/life/IMG_0779",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQAQCdASoQAAwAA4BaJbACdACGr9+vRAD+6gFyQB8VC165KffwvPk2EkWmBmkXngNLj6uiTCu/6VdvOw0QqGjSKxeXSvUPex4vf/n90nFSit6SPl+q3q5gbNAAAA==",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "5. Mount Tam with Audrey, Dan, & Arty",
+        "alt": "5. Mount Tam with Audrey, Dan, & Arty"
+    },
+    {
+        "base": "/life/IMG_0819",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAABQAgCdASoQAAwAA4BaJZgCdAfwBjiS1NqF+QAA+pjgIc3zORr/qEjkJp11Uw8liNCWuW82nBImPtvYiapppUevAm1mBTwlOo9V0Qyn2Qv4AAAA",
+        "tags": [
+            "San Francisco",
+            "Sidequests",
+            "Uber"
+        ],
+        "description": "Midnight Runners with Uber team and Audrey",
+        "alt": "Midnight Runners with Uber team and Audrey"
+    }
+];
