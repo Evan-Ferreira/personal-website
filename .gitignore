@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# life photo originals (masters live outside the repo; only optimized WebP in /public/life is committed)
+/photos/originals/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

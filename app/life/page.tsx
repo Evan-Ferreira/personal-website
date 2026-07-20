@@ -1,24 +1,18 @@
-import { Memory as MemoryComponent } from '@/components/memory';
-import type { ImageInfo } from '@/components/project';
+import { Photo } from '@/components/memory';
+import { photos } from '@/app/life/photos.generated';
 
-type Memory = {
-    date: string;
-    description: string;
-    imageInfo: ImageInfo;
-};
-
-const memories: Memory[] = [];
+// Eager-load the top row (2 cells on desktop); everything else lazy-loads on scroll.
+const EAGER_COUNT = 2;
 
 function LifePage() {
     return (
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 h-full">
-            {memories.length > 0 ? (
-                memories.map((m, i) => (
-                    <MemoryComponent
-                        key={i}
-                        description={m.description}
-                        date={m.date}
-                        imageInfo={m.imageInfo}
+            {photos.length > 0 ? (
+                photos.map((photo, i) => (
+                    <Photo
+                        key={photo.base}
+                        photo={photo}
+                        eager={i < EAGER_COUNT}
                     />
                 ))
             ) : (
