@@ -308,5 +308,22 @@ export const photos: LifePhoto[] = [
         ],
         "description": "Midnight Runners with Uber team and Audrey",
         "alt": "Midnight Runners with Uber team and Audrey"
+    },
+    {
+        "base": "/life/life-20260728-dnn1y0",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACQAgCdASoQAAwAA4BaJbACdAYv1wQ3wI5yB9QGQAD9mNU5ICuwcVTfsqhmnCWxkPOimAcWcw4cNMXbkgbrmAsR+lFM7Fqp1l7IR7xBeldmFArKkdpEa2cJpGo+hpW7gG/yK7A54ioQBhf/CYsJAAAA",
+        "tags": [
+            "San Francisco",
+            "Food"
+        ],
+        "description": "Brunch at The Plow - Eggs Benedict",
+        "alt": "Brunch at The Plow - Eggs Benedict"
     }
 ];
