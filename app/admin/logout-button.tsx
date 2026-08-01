@@ -5,10 +5,10 @@ import { useState } from 'react';
 
 export function LogoutButton() {
     const router = useRouter();
-    const [busy, setBusy] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     async function logout() {
-        setBusy(true);
+        setIsLoading(true);
         await fetch('/api/admin/login', { method: 'DELETE' });
         router.replace('/admin/login');
         router.refresh();
@@ -17,10 +17,10 @@ export function LogoutButton() {
     return (
         <button
             onClick={logout}
-            disabled={busy}
-            className="text-fg-secondary disabled:opacity-50"
+            disabled={isLoading}
+            className="text-fg-secondary disabled:opacity-50 absolute top-0 right-0"
         >
-            {busy ? '…' : 'Log out'}
+            {isLoading ? '…' : 'Log out'}
         </button>
     );
 }

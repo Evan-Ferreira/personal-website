@@ -1,25 +1,21 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { SESSION_COOKIE, verifySessionToken } from '@/lib/auth/session';
+import { SESSION_COOKIE, isSessionAuthed } from '@/lib/auth/session';
 
-// Gate the admin portal + its API. The login page and login endpoint stay public
-// so you can actually authenticate. (Next 16 renamed `middleware` → `proxy`.)
+// Gate the admin portal + its API. Login routes are excluded from the matcher
 export const config = {
-    matcher: ['/admin/:path*', '/api/admin/:path*'],
+    matcher: [
+        '/admin',
+        '/admin/((?!login(?:/|$)).*)',
+        '/api/admin/((?!login(?:/|$)).*)',
+    ],
 };
-
-const PUBLIC_PATHS = new Set(['/admin/login', '/api/admin/login']);
 
 export async function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    if (PUBLIC_PATHS.has(pathname)) {
-        return NextResponse.next();
-    }
-
     const token = request.cookies.get(SESSION_COOKIE)?.value;
-    const secret = process.env.ADMIN_COOKIE_SECRET ?? '';
-    const authed = token && secret ? await verifySessionToken(token, secret) : false;
+    const authed = await isSessionAuthed(token);
 
     if (authed) {
         return NextResponse.next();

@@ -1,11 +1,3 @@
-/**
- * Shared /life photo optimization logic.
- *
- * Used by BOTH the CLI script (`scripts/optimize-photos.mts`, which reads originals
- * from disk) and the admin upload route (`app/api/admin/photos/route.ts`, which
- * receives an uploaded buffer). Keeping one implementation guarantees photos added
- * from the phone portal are encoded identically to ones added from the laptop.
- */
 import sharp from 'sharp';
 
 // Cells are ~400px wide on desktop (body is max-w-[840px], 2 cols) and full-width on mobile.
@@ -15,7 +7,6 @@ export const ASPECT = 3 / 4; // height / width (4:3 landscape)
 export const WEBP_QUALITY = 80;
 export const BLUR_WIDTH = 16;
 
-/** The manifest shape rendered by the /life page (also exported as `LifePhoto`). */
 export type GeneratedPhoto = {
     base: string;
     widths: number[];
@@ -27,7 +18,6 @@ export type GeneratedPhoto = {
     alt: string;
 };
 
-/** One encoded WebP variant, ready to write to disk or commit. */
 export type OptimizedVariant = { width: number; data: Buffer };
 
 export type OptimizedImage = {

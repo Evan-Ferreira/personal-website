@@ -1,4 +1,4 @@
-import { Photo } from '@/components/memory';
+import { Photo } from '@/components/photo';
 import { photos } from '@/app/life/photos.generated';
 
 // Eager-load the top row (2 cells on desktop); everything else lazy-loads on scroll.

@@ -1,6 +1,4 @@
-import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
-import { SESSION_COOKIE, verifySessionToken } from '@/lib/auth/session';
 import {
     optimizePhoto,
     renderManifest,
@@ -13,14 +11,7 @@ import { photos as generatedPhotos } from '@/app/life/photos.generated';
 export const runtime = 'nodejs';
 export const maxDuration = 60;
 
-const MAX_UPLOAD_BYTES = 25 * 1024 * 1024; // 25 MB
-
-async function isAuthed(): Promise<boolean> {
-    const secret = process.env.ADMIN_COOKIE_SECRET;
-    if (!secret) return false;
-    const token = (await cookies()).get(SESSION_COOKIE)?.value;
-    return token ? verifySessionToken(token, secret) : false;
-}
+const MAX_UPLOAD_BYTES = 5 * 1024 * 1024; // 5 MB
 
 /** Re-serialize app/life/photos.ts from the typed input array. */
 function serializePhotosTs(inputs: PhotoInput[]): string {
@@ -44,93 +35,98 @@ function makeSlug(): string {
 }
 
 export async function POST(request: Request) {
-    if (!(await isAuthed())) {
-        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
-    let form: FormData;
     try {
+        let form: FormData;
         form = await request.formData();
-    } catch {
-        return NextResponse.json(
-            { error: 'Expected multipart/form-data.' },
-            { status: 400 },
-        );
-    }
+        const file = form.get('file');
+        const caption = String(form.get('caption') ?? '').trim();
+        const tags = String(form.get('tags') ?? '')
+            .split(',')
+            .map((t) => t.trim())
+            .filter(Boolean);
 
-    const file = form.get('file');
-    const caption = String(form.get('caption') ?? '').trim();
-    const tags = String(form.get('tags') ?? '')
-        .split(',')
-        .map((t) => t.trim())
-        .filter(Boolean);
+        // ensure file is a File (an image)
+        if (!(file instanceof File)) {
+            return NextResponse.json(
+                { error: 'No image provided.' },
+                { status: 400 },
+            );
+        }
 
-    if (!(file instanceof File)) {
-        return NextResponse.json({ error: 'No image provided.' }, { status: 400 });
-    }
-    if (!caption) {
-        return NextResponse.json({ error: 'A caption is required.' }, { status: 400 });
-    }
-    if (!file.type.startsWith('image/')) {
-        return NextResponse.json(
-            { error: 'Uploaded file is not an image.' },
-            { status: 400 },
-        );
-    }
-    if (file.size > MAX_UPLOAD_BYTES) {
-        return NextResponse.json(
-            { error: 'Image is too large (max 25 MB).' },
-            { status: 413 },
-        );
-    }
+        // ensure a caption is provided
+        if (!caption) {
+            return NextResponse.json(
+                { error: 'A caption is required.' },
+                { status: 400 },
+            );
+        }
 
-    const buffer = Buffer.from(await file.arrayBuffer());
+        // ensure the file is an image
+        if (!file.type.startsWith('image/')) {
+            return NextResponse.json(
+                { error: 'Uploaded file is not an image.' },
+                { status: 400 },
+            );
+        }
 
-    let optimized;
-    try {
-        optimized = await optimizePhoto(buffer);
-    } catch {
-        return NextResponse.json(
+        // ensure the file is not too large
+        if (file.size > MAX_UPLOAD_BYTES) {
+            return NextResponse.json(
+                {
+                    error: `Image is too large (max ${Math.round(MAX_UPLOAD_BYTES / 1024 / 1024)} MB).`,
+                },
+                { status: 413 },
+            );
+        }
+
+        const buffer = Buffer.from(await file.arrayBuffer());
+
+        let optimized;
+        try {
+            optimized = await optimizePhoto(buffer);
+        } catch {
+            return NextResponse.json(
+                {
+                    error: 'Could not decode that image. If it is a HEIC from iOS, try re-taking or converting to JPEG.',
+                },
+                { status: 422 },
+            );
+        }
+
+        const slug = makeSlug();
+        const base = `/life/${slug}`;
+
+        const newInput: PhotoInput = {
+            file: `${slug}.jpg`,
+            tags,
+            description: caption,
+        };
+        const newGenerated: GeneratedPhoto = {
+            base,
+            widths: optimized.widths,
+            width: optimized.width,
+            height: optimized.height,
+            blurDataURL: optimized.blurDataURL,
+            tags,
+            description: caption,
+            alt: caption,
+        };
+
+        const files: CommitFile[] = [
+            ...optimized.files.map((f) => ({
+                path: `public/life/${slug}-${f.width}.webp`,
+                data: f.data,
+            })),
             {
-                error:
-                    'Could not decode that image. If it is a HEIC from iOS, try re-taking or converting to JPEG.',
+                path: 'app/life/photos.ts',
+                text: serializePhotosTs([...photoInputs, newInput]),
             },
-            { status: 422 },
-        );
-    }
+            {
+                path: 'app/life/photos.generated.ts',
+                text: renderManifest([...generatedPhotos, newGenerated]),
+            },
+        ];
 
-    const slug = makeSlug();
-    const base = `/life/${slug}`;
-
-    const newInput: PhotoInput = {
-        file: `${slug}.jpg`,
-        tags,
-        description: caption,
-    };
-    const newGenerated: GeneratedPhoto = {
-        base,
-        widths: optimized.widths,
-        width: optimized.width,
-        height: optimized.height,
-        blurDataURL: optimized.blurDataURL,
-        tags,
-        description: caption,
-        alt: caption,
-    };
-
-    const files: CommitFile[] = [
-        ...optimized.files.map((f) => ({
-            path: `public/life/${slug}-${f.width}.webp`,
-            data: f.data,
-        })),
-        { path: 'app/life/photos.ts', text: serializePhotosTs([...photoInputs, newInput]) },
-        {
-            path: 'app/life/photos.generated.ts',
-            text: renderManifest([...generatedPhotos, newGenerated]),
-        },
-    ];
-
-    try {
         const pr = await openPhotoPR({
             branch: `admin/photo-${slug}`,
             title: `photo: ${caption}`,
@@ -142,10 +138,17 @@ export async function POST(request: Request) {
                 `- **Widths:** ${optimized.widths.join('/')}w\n\n` +
                 `Merge to publish to \`/life\`.`,
         });
-        return NextResponse.json({ ok: true, prUrl: pr.url, prNumber: pr.number });
+        return NextResponse.json({
+            ok: true,
+            prUrl: pr.url,
+            prNumber: pr.number,
+        });
     } catch (err) {
         return NextResponse.json(
-            { error: err instanceof Error ? err.message : 'Failed to open PR.' },
+            {
+                error:
+                    err instanceof Error ? err.message : 'Failed to open PR.',
+            },
             { status: 502 },
         );
     }

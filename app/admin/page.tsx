@@ -1,17 +1,12 @@
 import Link from 'next/link';
-import { LogoutButton } from './logout-button';
 
 export default function AdminPage() {
     return (
-        <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-between">
-                <h1 className="text-fg-primary text-lg">Admin</h1>
-                <LogoutButton />
-            </div>
+        <div className="flex flex-col mt-2 gap-4">
             <nav className="flex flex-col gap-2">
                 <Link
                     href="/admin/photos"
-                    className="rounded-md border border-border px-3 py-2 text-fg-primary"
+                    className="text-fg-secondary hover:text-fg-primary active:text-fg-primary transition-all ease-in-out duration-150"
                 >
                     Add a /life photo →
                 </Link>

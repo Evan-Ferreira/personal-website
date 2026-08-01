@@ -47,6 +47,8 @@ async function processPhoto(input: PhotoInput): Promise<GeneratedPhoto> {
         alt: input.alt ?? input.description,
     };
 
+    // if the original photo exists, optimize and write the new webp files
+    // if generated webp photos already exists, they get overwritten
     if (existsSync(originalPath)) {
         const buffer = await readFile(originalPath);
         const opt = await optimizePhoto(buffer);
@@ -54,6 +56,9 @@ async function processPhoto(input: PhotoInput): Promise<GeneratedPhoto> {
             const outPath = path.join(OUTPUT_DIR, `${slug}-${file.width}.webp`);
             await writeFile(outPath, file.data);
         }
+        console.log(
+            `Optimizing ${input.file} … done (${opt.widths.join('/')}w)`,
+        );
         return {
             base,
             widths: opt.widths,
@@ -64,7 +69,7 @@ async function processPhoto(input: PhotoInput): Promise<GeneratedPhoto> {
         };
     }
 
-    // No original on disk — carry forward the already-optimized entry if we have one.
+    //
     const existing = existingByBase.get(base);
     if (existing) {
         return { ...existing, ...text };
@@ -88,14 +93,13 @@ async function main() {
 
     const generated: GeneratedPhoto[] = [];
     for (const input of inputs) {
-        process.stdout.write(`Optimizing ${input.file} … `);
         const photo = await processPhoto(input);
         generated.push(photo);
         const carried = !existsSync(path.join(ORIGINALS_DIR, input.file));
         console.log(
             carried
-                ? `carried forward (${photo.widths.join('/')}w)`
-                : `done (${photo.widths.join('/')}w)`,
+                ? `Optimizing ${input.file} … carried forward (${photo.widths.join('/')}w)`
+                : `Optimizing ${input.file} … done (${photo.widths.join('/')}w)`,
         );
     }
 
