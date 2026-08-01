@@ -21,22 +21,46 @@ export default async function Home() {
                 interested in agents, full stack engineering, and design.
             </p>
             <p>
-                Currently, I’m building JAJA and agents as a software
-                engineering intern at Uber.
+                Currently, I’m building a venture studio with my{' '}
+                <a
+                    href="https://www.josephliao.ca/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-fg-secondary hover:text-fg-primary active:text-fg-primary transition-all ease-in-out duration-150 underline"
+                >
+                    best friend
+                </a>
+                , sponsored by the{' '}
+                <a
+                    href="https://cansbridgefellowship.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-fg-secondary hover:text-fg-primary active:text-fg-primary transition-all ease-in-out duration-150 underline"
+                >
+                    Cansbridge Fellowship
+                </a>
+                .
             </p>
             <p>
-                Previously I co-founded and sold a startup, led an engineering
-                team at Taiv (YC W20), launched payment methods at Shopify, and
-                was a nationally-ranked freestyle wrestler.
+                Previously I co-founded and{' '}
+                <a
+                    href="https://betakit.com/taiv-acquihires-fellow-canadian-adtech-startup-local-reach-to-aid-expansion-plans/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-fg-secondary hover:text-fg-primary active:text-fg-primary transition-all ease-in-out duration-150 underline"
+                >
+                    sold a startup
+                </a>
+                , led an engineering team at Taiv (YC W20), interned at Uber and
+                Shopify, and was a nationally-ranked freestyle wrestler.
             </p>
             <p>
                 Today, I’m focusing on trying to balance my ambitions with being
-                more spontaneous and appreciative for this gift we have called
-                life.
+                more spontaneous and appreciative for the life I get to live.
             </p>
             <p>Some interesting things I’ve worked on:</p>
             <ul className="list-disc ml-4">
-                <li>JAJA (in progress)</li>
+                <li>JAJA Labs(in progress)</li>
                 <li>Local Reach (acquired)</li>
                 <li>inQUbate</li>
                 <li>Stumble</li>
