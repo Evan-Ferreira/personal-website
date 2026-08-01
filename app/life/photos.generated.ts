@@ -325,5 +325,22 @@ export const photos: LifePhoto[] = [
         ],
         "description": "Brunch at The Plow - Eggs Benedict",
         "alt": "Brunch at The Plow - Eggs Benedict"
+    },
+    {
+        "base": "/life/life-20260801-kvee1j",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABQAgCdASoQAAwAA4BaJaACdAEegn4WrOCNcAAA/rQSSEHl59cmoShLkJFOwSnycB2OwDJyZgsMyqoEA5p1TwcKSX/Dg5b1WO24iBWRkKAAAA==",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "Lands End Lookout",
+        "alt": "Lands End Lookout"
     }
 ];
