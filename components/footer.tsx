@@ -1,6 +1,6 @@
 export function Footer() {
     return (
-        <footer className="flex text-fg-tertiary items-center justify-between w-full mt-4">
+        <footer className="flex text-fg-tertiary items-center justify-between w-full mt-auto">
             <div className="flex gap-1 group items-center">
                 <a
                     href="https://x.com/evanjfer"
