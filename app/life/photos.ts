@@ -151,5 +151,13 @@ export const photos: PhotoInput[] = [
             "Food"
         ],
         "description": "Brunch at The Plow - Eggs Benedict"
+    },
+    {
+        "file": "life-20260801-kvee1j.jpg",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "Lands End Lookout"
     }
 ];
