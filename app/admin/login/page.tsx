@@ -4,6 +4,14 @@ import { Suspense, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function AdminLoginPage() {
+    return (
+        <Suspense fallback={null}>
+            <LoginForm />
+        </Suspense>
+    );
+}
+
+function LoginForm() {
     const router = useRouter();
     const params = useSearchParams();
     const next = params.get('next') || '/admin';
@@ -37,33 +45,31 @@ export default function AdminLoginPage() {
     }
 
     return (
-        <Suspense fallback={null}>
-            <form
-                onSubmit={onSubmit}
-                className="flex flex-col gap-4 max-w-sm mx-auto"
+        <form
+            onSubmit={onSubmit}
+            className="flex flex-col gap-4 max-w-sm mx-auto"
+        >
+            <p className="text-fg-secondary">
+                {'Enter your passcode to continue.'}
+            </p>
+            <input
+                type="password"
+                inputMode="text"
+                autoComplete="current-password"
+                autoFocus
+                value={passcode}
+                onChange={(e) => setPasscode(e.target.value)}
+                placeholder="Passcode"
+                className="rounded-md border px-3 py-2 bg-bg-secondary text-fg-primary"
+            />
+            <button
+                type="submit"
+                disabled={isLoading || !passcode}
+                className="px-3 py-2 text-fg-secondary disabled:opacity-50 hover:text-fg-primary active:text-fg-primary transition-all ease-in-out duration-150"
             >
-                <p className="text-fg-secondary">
-                    {'Enter your passcode to continue.'}
-                </p>
-                <input
-                    type="password"
-                    inputMode="text"
-                    autoComplete="current-password"
-                    autoFocus
-                    value={passcode}
-                    onChange={(e) => setPasscode(e.target.value)}
-                    placeholder="Passcode"
-                    className="rounded-md border px-3 py-2 bg-bg-secondary text-fg-primary"
-                />
-                <button
-                    type="submit"
-                    disabled={isLoading || !passcode}
-                    className="px-3 py-2 text-fg-secondary disabled:opacity-50 hover:text-fg-primary active:text-fg-primary transition-all ease-in-out duration-150"
-                >
-                    {isLoading ? 'Loading...' : 'Log in'}
-                </button>
-                {error && <p className="text-red-500">{error}</p>}
-            </form>
-        </Suspense>
+                {isLoading ? 'Loading...' : 'Log in'}
+            </button>
+            {error && <p className="text-red-500">{error}</p>}
+        </form>
     );
 }
