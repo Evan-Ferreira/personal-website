@@ -159,5 +159,13 @@ export const photos: PhotoInput[] = [
             "Nature"
         ],
         "description": "Lands End Lookout"
+    },
+    {
+        "file": "life-20260801-ukjbxl.jpg",
+        "tags": [
+            "San Francisco",
+            "Uber"
+        ],
+        "description": "Asking the Uber CTO, Praveen, a question"
     }
 ];

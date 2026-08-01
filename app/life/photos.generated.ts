@@ -342,5 +342,22 @@ export const photos: LifePhoto[] = [
         ],
         "description": "Lands End Lookout",
         "alt": "Lands End Lookout"
+    },
+    {
+        "base": "/life/life-20260801-ukjbxl",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAABQAgCdASoQAAwAA4BaJbACsOUAB5d1DGpFZAAA4Deb+/P5XeV35KODjF8RjPbMXlJj8FFdcaSg6fNT/9Oc4bdA5d+NGuElqobb/dx7ozgi/SHVaNCgAA==",
+        "tags": [
+            "San Francisco",
+            "Uber"
+        ],
+        "description": "Asking the Uber CTO, Praveen, a question",
+        "alt": "Asking the Uber CTO, Praveen, a question"
     }
 ];
