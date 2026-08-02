@@ -342,5 +342,22 @@ export const photos: LifePhoto[] = [
         ],
         "description": "Lands End Lookout",
         "alt": "Lands End Lookout"
+    },
+    {
+        "base": "/life/life-20260802-w0xilo",
+        "widths": [
+            640,
+            1024,
+            1680
+        ],
+        "width": 1680,
+        "height": 1260,
+        "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAwAA4BaJQBOgBZlETq9AAD+dq7UYQS/ck86lOV640tdiKl2BT+0Zc6wUh02lEdNC7XAAAA=",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "Lands End Lookout #2",
+        "alt": "Lands End Lookout #2"
     }
 ];

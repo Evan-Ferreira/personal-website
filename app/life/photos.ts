@@ -159,5 +159,13 @@ export const photos: PhotoInput[] = [
             "Nature"
         ],
         "description": "Lands End Lookout"
+    },
+    {
+        "file": "life-20260802-w0xilo.jpg",
+        "tags": [
+            "San Francisco",
+            "Nature"
+        ],
+        "description": "Lands End Lookout #2"
     }
 ];
